@@ -12,11 +12,17 @@
 body {
   background: #eee;
   --swiper-theme-color: #000;
+  max-width: 1245px;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
 }
 
-.swiper {
+.swiper-pitchbar{
   width: 100%;
   height: 35px;
+  border-radius: 10px;
+  margin: 10px 0 10px 0;
 }
 
 .swiper-slide img {
@@ -45,7 +51,7 @@ body {
 .swiper-button {
   position: absolute;
   top: 0;
-  max-width: 350px;
+  max-width: 60px;
   width: 100%;
   height: 100%;
   z-index: 100;
@@ -62,18 +68,67 @@ body {
   right: 0;
 }
 
+.header {
+padding: 5px;
+}
+
+/* headerMid */
+
+.headerMain{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    border-radius: 10px;
+    padding: 0 25px;
+    background: #638e95;
+    margin-bottom: 10px;
+}
+
 .logo {
   width: 129px;
   height: 43px;
   display: flex;
-  border-radius: 20px;
+  align-items: center;
+  border-radius: 10px;
 }
 
-.logo img {
+.user {
+    display: flex;
+    gap: 8px;
+}
+
+/* .logo img {
   width: 100%;
   object-fit: cover;
-}
+} */
 
 .logo span {
   width: 100%;
 }
+
+
+.menu {
+
+}
+
+.menuMain{
+    display: flex;
+    justify-content: space-between;
+}
+
+.menuMain li {
+    list-style: none;
+    width: 243px;
+    height: 48px;
+    padding: 8px 20px 8px 12px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.swiper-banner {
+    max-width: 100%;
+    height: 330px;
+    border-radius: 10px;
+}
+
