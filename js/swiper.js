@@ -13,3 +13,16 @@ var swiper = new Swiper(".mySwiper", {
         clickable: true,
       },
 });
+
+var swiper = new Swiper(".swiper-banner", {
+    loop: true,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+
+      },
+});
