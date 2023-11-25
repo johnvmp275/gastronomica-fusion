@@ -1,0 +1,25 @@
+body a {
+    text-decoration: none;
+    color: var(--text-color);
+  }
+
+  .containerMain {
+    max-width: 1245px;
+    margin: 0 auto;
+  }
+  
+  .material-symbols-outlined, .fav {
+    font-size: 27px !important;
+    display: flex;
+    align-items: center;
+  }
+
+  button {
+    border: none;
+    cursor: pointer;
+    background: transparent;
+  }
+
+  a, p , strong {
+    color: #fff;
+  }

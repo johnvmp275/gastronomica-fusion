@@ -7,76 +7,98 @@
     <title>Gastronômica Fusion</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-</head>
-
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 
 <body>
-    <!-- Swiper -->
-    <div class="swiper mySwiper swiper-pitchbar">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">Slide 1</div>
-            <div class="swiper-slide">Slide 2</div>
-            <div class="swiper-slide">Slide 3</div>
-        </div>
-        <div class="swiper-button next">
-            <div class="swiper-button-next pitchbar"></div>
-        </div>
-        <div class="swiper-button prev">
-            <div class="swiper-button-prev pitchbar"></div>
-        </div>
-    </div>
 
     <header class="header">
-        <section class="headerMain">
+        <!-- Swiper -->
+        <div class="swiper mySwiper swiper-pitchbar containerMain">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">Sabores locais e técnicas artesanais se encontram em cada prato do nosso
+                    restaurante.</div>
+                <div class="swiper-slide">Venha saborear uma experiência gastronômica única, com ingredientes frescos e
+                    um toque de inovação em cada prato.</div>
+                <div class="swiper-slide">Descubra uma carta cuidadosamente elaborada, unindo tradição e criatividade
+                    para uma experiência gastronômica memorável.</div>
+            </div>
+            <div class="swiper-button next">
+                <div class="swiper-button-next pitchbar"></div>
+            </div>
+            <div class="swiper-button prev">
+                <div class="swiper-button-prev pitchbar"></div>
+            </div>
+        </div>
+
+        <section class="headerMain containerMain">
             <div class="logo">
                 <span class="logoText">Fusion</span>
             </div>
-            <form action="">
-                <input type="search" name="" id="">
-                <button type="submit">teste</button>
+            <form class="header-form">
+                <input type="search" name="" id="" placeholder="search...">
+                <button type="submit">
+                    <span class="material-symbols-outlined">
+                        search
+                    </span>
+                </button>
             </form>
             <div class="user">
-                <a href="" class="fav">teste</a>
-                <div href="" class="useracount"> teste</div>
-                <button type="button">teste</button>
-
+                <a href="" class="fav">
+                    <span class="material-symbols-outlined">
+                        favorite
+                    </span>
+                </a>
+                <div href="" class="user-acount">
+                    <a href="">
+                        <span class="material-symbols-outlined">
+                            person
+                        </span>
+                    </a>
+                    <p>
+                        <strong>Seja bem vindo!</strong>
+                        <br>
+                        <a href="">Entre</a>
+                        ou
+                        <a href="">Cadastre-se</a>
+                    </p>
+                </div>
+                <button type="button">
+                    <span class="material-symbols-outlined">
+                        local_mall
+                    </span>
+                </button>
             </div>
         </section>
-        <nav class="menu">
+        <nav class="menu containerMain">
             <ul class="menuMain">
-                <li>teste</li>
-                <li>teste</li>
-                <li>teste</li>
-                <li>teste</li>
-                <li>teste</li>
-                <li>teste</li>
-                <li>teste</li>
+                <li class="navigation-item"><a href="" class="navigationLink">Churrasco</a>
+                    <div class="sub-container">
+                        <ul class="navigation-dropdown">
+                            <li><a href="">teste</a></li>
+                            <li><a href="">teste</a></li>
+                            <li><a href="">teste</a></li>
+                            <li><a href="">teste</a></li>
+                            <li><a href="">teste</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="navigation-item"><a href="" class="navigationLink">Sobremesas</a></li>
+                <li class="navigation-item"><a href="" class="navigationLink">Massas</a></li>
+                <li class="navigation-item"><a href="" class="navigationLink">Frutos-do-mar</a></li>
+                <li class="navigation-item"><a href="" class="navigationLink">Saladas</a></li>
+                <li class="navigation-item"><a href="" class="navigationLink">Aperitivos</a></li>
+                <li class="navigation-item"><a href="" class="navigationLink">Carnes</a></li>
             </ul>
+            <div class="header-navigation__black"></div>
         </nav>
     </header>
-    <main class="homeMain">
+    <main class="homeMain containerMain">
         <div class="swiper swiper-banner">
             <div class="swiper-wrapper">
                 <div class="swiper-slide"><img src="./img/testegas.png" alt="banner01" srcset=""></div>
                 <div class="swiper-slide"><img src="./img/banner.jpg" alt="banner02" srcset=""></div>
-                <div class="swiper-slide"><img src="./img/banner02.jpg" alt="banner03" srcset=""></div>
-                <div class="swiper-slide"><img src="./img/banner02.jpg" alt="banner03" srcset=""></div>
-                <div class="swiper-slide"><img src="./img/banner02.jpg" alt="banner03" srcset=""></div>
-                <div class="swiper-slide"><img src="./img/banner02.jpg" alt="banner03" srcset=""></div>
-                <div class="swiper-slide"><img src="./img/banner02.jpg" alt="banner03" srcset=""></div>
-                <div class="swiper-slide"><img src="./img/banner02.jpg" alt="banner03" srcset=""></div>
-                <div class="swiper-slide"><img src="./img/banner02.jpg" alt="banner03" srcset=""></div>
-                <div class="swiper-slide"><img src="./img/banner02.jpg" alt="banner03" srcset=""></div>
-                <div class="swiper-slide"><img src="./img/banner02.jpg" alt="banner03" srcset=""></div>
-                <div class="swiper-slide"><img src="./img/banner02.jpg" alt="banner03" srcset=""></div>
-                <div class="swiper-slide"><img src="./img/banner02.jpg" alt="banner03" srcset=""></div>
-                <div class="swiper-slide"><img src="./img/banner02.jpg" alt="banner03" srcset=""></div>
-                <div class="swiper-slide"><img src="./img/banner02.jpg" alt="banner03" srcset=""></div>
-                <div class="swiper-slide"><img src="./img/banner02.jpg" alt="banner03" srcset=""></div>
-                <div class="swiper-slide"><img src="./img/banner02.jpg" alt="banner03" srcset=""></div>
-                <div class="swiper-slide"><img src="./img/banner02.jpg" alt="banner03" srcset=""></div>
-                <div class="swiper-slide"><img src="./img/banner02.jpg" alt="banner03" srcset=""></div>
                 <div class="swiper-slide"><img src="./img/banner02.jpg" alt="banner03" srcset=""></div>
             </div>
             <section class="containerPagination">
@@ -89,7 +111,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Initialize Swiper -->
-    <script src="./js/swiper.js"></script>
+    <script type="module" src="./js/script.js"></script>
 </body>
 
 </html>
