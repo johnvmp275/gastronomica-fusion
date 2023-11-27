@@ -1,25 +1,38 @@
+:root {
+  --background-color: #fff;
+  --text-color: #000;
+  --background-red: #FF3131;
+  --transition-02: all 0.2s ease;
+  --transition-05: all 0.5s ease;
+}
+
 body a {
-    text-decoration: none;
-    color: var(--text-color);
-  }
+  text-decoration: none;
+  color: var(--text-color);
+}
 
-  .containerMain {
-    max-width: 1245px;
-    margin: 0 auto;
-  }
-  
-  .material-symbols-outlined, .fav {
-    font-size: 27px !important;
-    display: flex;
-    align-items: center;
-  }
+.containerMain {
+  max-width: 1245px;
+  margin: 0 auto;
+}
 
-  button {
-    border: none;
-    cursor: pointer;
-    background: transparent;
-  }
+.material-symbols-outlined,
+.fav {
+  font-size: 27px !important;
+  display: flex;
+  align-items: center;
+}
 
-  a, p , strong {
-    color: #fff;
-  }
+button {
+  border: none;
+  cursor: pointer;
+  background: transparent;
+}
+
+img {
+  cursor: pointer;
+}
+
+.Main {
+  margin-top: 80px !important;
+}

@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "title": "Hambúrguer Clássico",
+        "image": "hamburguer.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Hambúrguer Vegetariano",
+        "image": "hamburguer.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Hambúrguer de Frango",
+        "image": "hamburguer.jpg"
+    },
+    {
+        "id": 4,
+        "title": "Hambúrguer de Peixe",
+        "image": "hamburguer.jpg"
+    },
+    {
+        "id": 5,
+        "title": "Hambúrguer Picante",
+        "image": "hamburguer.jpg"
+    },
+    {
+        "id": 6,
+        "title": "Hambúrguer Duplo",
+        "image": "hamburguer.jpg"
+    },
+    {
+        "id": 7,
+        "title": "Hambúrguer Supremo",
+        "image": "hamburguer.jpg"
+    },
+    {
+        "id": 8,
+        "title": "Hambúrguer Gourmet",
+        "image": "hamburguer.jpg"
+    },
+    {
+        "id": 9,
+        "title": "Hambúrguer Clássico",
+        "image": "hamburguer.jpg"
+    },
+    {
+        "id": 10,
+        "title": "Hambúrguer Vegetariano",
+        "image": "hamburguer.jpg"
+    }
+]

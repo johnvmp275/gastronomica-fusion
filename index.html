@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gastronômica Fusion</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./img/favi.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 
 <body>
-
+    <!-- ====== hedaer-home ====== -->
     <header class="header">
         <!-- Swiper -->
         <div class="swiper mySwiper swiper-pitchbar containerMain">
@@ -34,7 +35,11 @@
 
         <section class="headerMain containerMain">
             <div class="logo">
-                <span class="logoText">Fusion</span>
+                <img src="./img/Logo.png" alt="">
+                <div>
+                    <strong class="logoText">Fusion</strong>
+                    <p>gastronomic</p>
+                </div>
             </div>
             <form class="header-form">
                 <input type="search" name="" id="" placeholder="search...">
@@ -64,7 +69,7 @@
                         <a href="">Cadastre-se</a>
                     </p>
                 </div>
-                <button type="button">
+                <button type="button" class="cartIcon">
                     <span class="material-symbols-outlined">
                         local_mall
                     </span>
@@ -75,18 +80,108 @@
             <ul class="menuMain">
                 <li class="navigation-item"><a href="" class="navigationLink">Churrasco</a>
                     <div class="sub-container">
-                        <ul class="navigation-dropdown">
-                            <li><a href="">teste</a></li>
-                            <li><a href="">teste</a></li>
-                            <li><a href="">teste</a></li>
-                            <li><a href="">teste</a></li>
-                            <li><a href="">teste</a></li>
-                        </ul>
+                        <div class="navigation-container__dropdown">
+                            <ul class="navigation-dropdown">
+                                <li><a href="">teste</a></li>
+                                <li><a href="">teste</a></li>
+                                <li><a href="">teste</a></li>
+                                <li><a href="">teste</a></li>
+                                <li><a href="">teste</a></li>
+                            </ul>
+                            <div class="banner-dropdown">
+                                <img src="./img/churrasco.jpg" alt="" srcset="">
+                            </div>
+                        </div>
                     </div>
                 </li>
-                <li class="navigation-item"><a href="" class="navigationLink">Sobremesas</a></li>
+                <li class="navigation-item"><a href="" class="navigationLink">Sobremesas</a>
+                    <div class="sub-container">
+                        <div class="navigation-container__dropdown">
+                            <ul class="navigation-dropdown">
+                                <li><a href="">teste</a></li>
+                                <li><a href="">teste</a></li>
+                                <li><a href="">teste</a></li>
+                                <li><a href="">teste</a></li>
+                                <li><a href="">teste</a></li>
+                            </ul>
+                            <div class="banner-dropdown">
+                                <img src="./img/sobremesa.jpg" alt="" srcset="">
+                            </div>
+                        </div>
+                    </div>
+                </li>
                 <li class="navigation-item"><a href="" class="navigationLink">Massas</a></li>
-                <li class="navigation-item"><a href="" class="navigationLink">Frutos-do-mar</a></li>
+                <li class="navigation-item"><a href="" class="navigationLink">Frutos-do-mar</a>
+                    <div class="sub-container">
+                        <div class="navigation-container__dropdown">
+                            <ul class="navigation-dropdown">
+                                <li><a href="">teste</a>
+                                    <div class="sub-container-dropdown">
+                                        <div class="sub-navigation-container__dropdown">
+                                            <ul>
+                                                <li><a href="">teste</a></li>
+                                                <li><a href="">teste</a></li>
+                                                <li><a href="">teste</a></li>
+                                                <li><a href="">teste</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li><a href="">teste</a>
+                                    <div class="sub-container-dropdown">
+                                        <div class="sub-navigation-container__dropdown">
+                                            <ul>
+                                                <li><a href="">teste</a></li>
+                                                <li><a href="">teste</a></li>
+                                                <li><a href="">teste</a></li>
+                                                <li><a href="">teste</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li><a href="">teste</a>
+                                    <div class="sub-container-dropdown">
+                                        <div class="sub-navigation-container__dropdown">
+                                            <ul>
+                                                <li><a href="">teste</a></li>
+                                                <li><a href="">teste</a></li>
+                                                <li><a href="">teste</a></li>
+                                                <li><a href="">teste</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li><a href="">teste</a>
+                                    <div class="sub-container-dropdown">
+                                        <div class="sub-navigation-container__dropdown">
+                                            <ul>
+                                                <li><a href="">teste</a></li>
+                                                <li><a href="">teste</a></li>
+                                                <li><a href="">teste</a></li>
+                                                <li><a href="">teste</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li><a href="">teste</a>
+                                    <div class="sub-container-dropdown">
+                                        <div class="sub-navigation-container__dropdown">
+                                            <ul>
+                                                <li><a href="">teste</a></li>
+                                                <li><a href="">teste</a></li>
+                                                <li><a href="">teste</a></li>
+                                                <li><a href="">teste</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="banner-dropdown">
+                                <img src="./img/frutos-do-mar.jpg" alt="" srcset="">
+                            </div>
+                        </div>
+                    </div>
+                </li>
                 <li class="navigation-item"><a href="" class="navigationLink">Saladas</a></li>
                 <li class="navigation-item"><a href="" class="navigationLink">Aperitivos</a></li>
                 <li class="navigation-item"><a href="" class="navigationLink">Carnes</a></li>
@@ -94,18 +189,78 @@
             <div class="header-navigation__black"></div>
         </nav>
     </header>
+    <!-- ====== end header home ====== -->
+
+    <!-- ====== middle home =======  -->
     <main class="homeMain containerMain">
-        <div class="swiper swiper-banner">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="./img/testegas.png" alt="banner01" srcset=""></div>
-                <div class="swiper-slide"><img src="./img/banner.jpg" alt="banner02" srcset=""></div>
-                <div class="swiper-slide"><img src="./img/banner02.jpg" alt="banner03" srcset=""></div>
+        <!-- ===== swiper banner ===== -->
+        <section class="bannerPrincipal">
+            <div class="swiper swiper-banner containerMain">
+                <div class="swiper-wrapper swiper-banner-principal">
+                   
+                </div>
+                <section class="containerPagination">
+                    <div class="swiper-pagination"></div>
+                </section>
             </div>
-            <section class="containerPagination">
-                <div class="swiper-pagination"></div>
-            </section>
-        </div>
+        </section>
+        <!-- ===== end swiper banner ===== -->
+        <section class="slider-products Main">
+            <!-- ====== swiper products ===== -->
+            <div class="swiper swiper-products containerMain">
+                <div class="swiper-wrapper swiper-products-slide">
+
+                </div>
+                <section class="containerPagination">
+                    <div class="swiper-pagination"></div>
+                </section>
+            </div>
+            <!-- ====== end swiper products ===== -->
+        </section>
+
+        <section class="slider-categories Main">
+            <h2>Categorias</h2>
+            <!-- ====== swiper products ===== -->
+            <div class="swiper swiper-categorias containerMain">
+                <div class="swiper-wrapper swiper-categories-slide">
+
+                </div>
+                <section class="containerPagination">
+                    <div class="swiper-pagination"></div>
+                </section>
+            </div>
+            <!-- ====== end swiper products ===== -->
+        </section>
+        <section class="slider-products Main">
+            <!-- ====== swiper products ===== -->
+            <div class="swiper swiper-products containerMain">
+                <div class="swiper-wrapper swiper-products-slideSecundario">
+
+                </div>
+                <section class="containerPagination">
+                    <div class="swiper-pagination"></div>
+                </section>
+            </div>
+            <!-- ====== end swiper products ===== -->
+        </section>
+        <section class="bannerSecundario Main">
+            <div class="swiper swiper-banner containerMain">
+                <div class="swiper-wrapper swiper-banner-secundario">
+                  
+                </div>
+                <section class="containerPagination">
+                    <div class="swiper-pagination"></div>
+                </section>
+            </div>
+        </section>
+        <section class="cart">
+            <div class="background-black"></div>
+            <div class="cartSide">
+                <button class="closeCart">X</button>
+            </div>
+        </section>
     </main>
+    <footer class="rodape"></footer>
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
