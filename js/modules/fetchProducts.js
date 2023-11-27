@@ -37,7 +37,7 @@ export default function fetchProducts() {
 
     }
 
-    function initializeSwiperS() {
+    function initializeProdutoPrincipal() {
         //=====swiper de produtos====
 
         var swiper = new Swiper(".swiper-products", {
@@ -63,8 +63,34 @@ export default function fetchProducts() {
             },
         });
     }
+    function initializeProdutoSecundario() {
+        //=====swiper de produtos====
 
-    function initializeSwiperBanner() {
+        var swiper = new Swiper(".swiper-products-secundario", {
+            slidesPerView: 5,
+            spaceBetween: 40,
+            loop: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            }, breakpoints: {
+                0: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+                720: {
+                    slidesPerView: 5,
+                    spaceBetween: 40,
+                },
+            },
+        });
+    }
+
+    function initializePrincipalBanner() {
         var swiper = new Swiper(".swiper-banner", {
             loop: true,
             autoplay: {
@@ -78,6 +104,20 @@ export default function fetchProducts() {
         });
     }
 
+    function initializeBannerSecundario() {
+        var swiper = new Swiper(".swiper-banner-secundario", {
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    }
+    
     async function fetchProductsPrimario() {
         try {
             const response = await fetch('./json/slidePrimario.json');
@@ -107,7 +147,7 @@ export default function fetchProducts() {
             });
 
             // Inicialize o Swiper após adicionar os slides
-
+            initializeProdutoPrincipal();
         } catch (error) {
             console.error('Houve um erro ao buscar os produtos:', error);
         }
@@ -140,7 +180,7 @@ export default function fetchProducts() {
                 `;
                 swiperWrapper.appendChild(newSlide);
             });
-            initializeSwiperS();
+            initializeProdutoSecundario()
             activeItemsProducts();
         } catch (error) {
             console.error('Houve um erro ao buscar os produtos:', error);
@@ -187,7 +227,9 @@ export default function fetchProducts() {
                         <img src="./img/${product.image}" alt="${product.title}">
                 `;
                 swiperWrapper.appendChild(newSlide);
+
             });
+            initializePrincipalBanner()
         } catch (error) {
             console.error('Houve um erro ao buscar os produtos:', error);
         }
