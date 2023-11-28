@@ -108,7 +108,7 @@
 .swiper-products .slide-products, .slider-categorias{
     max-height: 360px;
     height: inherit;
-    padding: 16px 0;
+    padding: 16px 16px;
     display: flex;
     gap: 20px;
     flex-direction: column !important;
