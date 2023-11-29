@@ -11,6 +11,10 @@ body a {
   color: var(--text-color);
 }
 
+.body-espacamento{
+  padding: 0 16px;
+}
+
 .containerMain {
   max-width: 1245px;
   margin: 0 auto;
