@@ -1,6 +1,6 @@
 export default function swiperSlider() {
     
-    var swiper = new Swiper(".mySwiper", {
+    var swiper = new Swiper(".swiper-pitchbar", {
         loop: true,
         autoplay: {
             delay: 3000,

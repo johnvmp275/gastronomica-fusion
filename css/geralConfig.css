@@ -29,6 +29,10 @@ button {
   background: transparent;
 }
 
+button {
+  color: #fff;
+}
+
 img {
   cursor: pointer;
 }

@@ -90,7 +90,7 @@ export default function fetchProducts() {
   }
 
   function initializePrincipalBanner() {
-    new Swiper(".swiper-banner", {
+    new Swiper(".swiper-principal-banner", {
       loop: true,
       autoplay: {
         delay: 3000,
@@ -104,7 +104,7 @@ export default function fetchProducts() {
   }
 
   function initializeBannerSecundario() {
-    new Swiper(".swiper-banner-secundario", {
+    new Swiper(".swiper-secundario-banner", {
       loop: true,
       autoplay: {
         delay: 3000,
@@ -249,7 +249,7 @@ export default function fetchProducts() {
                 `;
         swiperWrapper.appendChild(newSlide);
       });
-      initializeBannerSecundario();
+      initializeBannerSecundario()
     } catch (error) {
       console.error("Houve um erro ao buscar os produtos:", error);
     }

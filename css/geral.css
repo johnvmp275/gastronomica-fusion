@@ -24,27 +24,56 @@ body {
   margin: 10px auto;
 }
 
-.headerMain {
+.header-desktop {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
   border-radius: 10px;
   padding: 21px 31px;
   background: var(--background-red);
   /* box-shadow: 0 0 110px 16px #96C121; */
 }
 
+.header-mobile {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  padding: 21px 31px;
+  background: var(--background-red);
+  flex-direction: column;
+}
+
+
+
 .logo {
   cursor: pointer;
-  width: 150px;
+  max-width: 150px;
+  width: 100%;
   height: 43px;
   display: flex;
   align-items: center;
   border-radius: 10px;
 }
 
-.logo div{
+.container-search-desktop {
+  flex: 1 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: calc(50% + 200px);
+  gap: 20px;
+}
+
+.mobile-center-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.logo div {
   color: white;
   display: flex;
   flex-direction: column;
@@ -102,14 +131,14 @@ body {
 
 .user {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  width: 100%;
-  max-width: 275px;
+  justify-content: center;
+  gap: 8px;
 }
 
 .user span,
-.user a, .user p {
+.user a,
+.user p {
   color: #fff;
 }
 
@@ -227,4 +256,15 @@ body {
 .sub-container-dropdown a {
   padding: 0;
   color: black;
+}
+
+
+@media (max-width: 720px ) {
+  .header-desktop, .menuMain {
+    display: none;
+
+  }
+  .header-mobile {
+    display: flex;
+  }
 }
