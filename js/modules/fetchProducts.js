@@ -13,10 +13,6 @@ export default function fetchProducts() {
         delay: 3000,
         disableOnInteraction: false,
       },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -41,10 +37,6 @@ export default function fetchProducts() {
       slidesPerView: 5,
       spaceBetween: 40,
       loop: true,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -68,10 +60,6 @@ export default function fetchProducts() {
       slidesPerView: 5,
       spaceBetween: 40,
       loop: true,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
