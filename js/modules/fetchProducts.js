@@ -76,6 +76,29 @@ export default function fetchProducts() {
       },
     });
   }
+  function initializeProdutoTerceiro() {
+    //=====swiper de produtos====
+
+    new Swiper(".swiper-products-terceiro", {
+      slidesPerView: 5,
+      spaceBetween: 40,
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        720: {
+          slidesPerView: 5,
+          spaceBetween: 40,
+        },
+      },
+    });
+  }
 
   function initializePrincipalBanner() {
     new Swiper(".swiper-principal-banner", {
@@ -170,7 +193,41 @@ export default function fetchProducts() {
         swiperWrapper.appendChild(newSlide);
       });
       initializeProdutoSecundario();
-      activeItemsProducts();
+    } catch (error) {
+      console.error("Houve um erro ao buscar os produtos:", error);
+    }
+  }
+
+  async function fetchProductsTerceiro() {
+    try {
+      const response = await fetch("./json/slideTerceiro.json");
+      const data = await response.json();
+
+      const swiperWrapper = document.querySelector(
+        ".swiper-products-slideTerceiro"
+      );
+
+      data.forEach((product) => {
+        let newSlide = document.createElement("div");
+        newSlide.classList.add("swiper-slide", "slide-products");
+        newSlide.innerHTML = `
+                <div class="product-favorite">
+                        <button class="button-favorite">
+                            <img src="./img/favorite.png" alt="favorite">
+                            <img src="./img/favorite-active.png" alt="favorite-active">
+                        </button>
+                    </div>
+                    <div class="product-image">
+                        <img src="./img/${product.image}" alt="${product.title}">
+                    </div>
+                        <p>${product.title}</p>
+                        <strong>${product.price},00</strong>
+                        <a class="product-link">Comprar</a>
+                    </div>
+                `;
+        swiperWrapper.appendChild(newSlide);
+      });
+      initializeProdutoTerceiro();
     } catch (error) {
       console.error("Houve um erro ao buscar os produtos:", error);
     }
@@ -237,7 +294,7 @@ export default function fetchProducts() {
                 `;
         swiperWrapper.appendChild(newSlide);
       });
-      initializeBannerSecundario()
+      initializeBannerSecundario();
     } catch (error) {
       console.error("Houve um erro ao buscar os produtos:", error);
     }
@@ -246,7 +303,10 @@ export default function fetchProducts() {
   // Adicione um listener para quando o DOM estiver pronto
   document.addEventListener("DOMContentLoaded", fetchProductsPrimario);
   document.addEventListener("DOMContentLoaded", fetchProductsSecundario);
+  document.addEventListener("DOMContentLoaded", fetchProductsTerceiro);
   document.addEventListener("DOMContentLoaded", fetchCategories);
   document.addEventListener("DOMContentLoaded", fetchBannerPrincipal);
   document.addEventListener("DOMContentLoaded", fetchBannerSecundario);
+  
+  activeItemsProducts();
 }
