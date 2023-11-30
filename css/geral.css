@@ -20,6 +20,10 @@ body {
   padding: 5px;
 }
 
+.header button {
+  background: transparent;
+}
+
 .header .swiper-pitchbar {
   margin: 10px auto;
 }
@@ -118,8 +122,6 @@ body {
 .header-form input[type="search"] {
   width: 100%;
   padding: 8px 16px;
-  outline: none;
-  border: none;
   background: transparent;
 }
 
@@ -258,13 +260,110 @@ body {
   color: black;
 }
 
+.instashop-topo {
+  display: flex;
+  justify-content: space-between;
+}
 
-@media (max-width: 720px ) {
-  .header-desktop, .menuMain {
+.instashop-topo button {
+  max-width: 183px;
+  width: 100%;
+  height: 40px;
+  padding: 8px 0px;
+  border-radius: 10px;
+  background: var(--background-red);
+}
+
+.instagram-posts {
+  display: grid;
+  grid-template-areas:
+    "imgA imgA imgA imgB imgB imgB imgC imgC imgC imgD"
+    "imgA imgA imgA imgB imgB imgB imgC imgC imgC imgE"
+    "imgA imgA imgA imgB imgB imgB imgC imgC imgC imgF";
+  grid-row-gap: 14px;
+  grid-column-gap: 17px;
+}
+
+.instagram-post:nth-child(1) {
+  grid-area: imgA;
+}
+
+.instagram-post:nth-child(2) {
+  grid-area: imgB;
+}
+
+.instagram-post:nth-child(3) {
+  grid-area: imgC;
+}
+
+.instagram-post:nth-child(4) {
+  grid-area: imgD;
+}
+
+.instagram-post:nth-child(5) {
+  grid-area: imgE;
+}
+
+.instagram-post:nth-child(6) {
+  grid-area: imgF;
+}
+
+.instagram-posts img {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  aspect-ratio: 1/1;
+}
+
+.rodape {
+  margin-bottom: 40px !important;
+}
+
+.newsletter {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  height: 146px;
+  padding: 37px 70px;
+  background: var(--background-red);
+}
+
+.newsletter button {
+  color: var(--swiper-theme-color)
+}
+
+.socialMedias {
+  display: flex;
+  margin-top: 20px !important;
+  align-items: center;
+  padding: 24px 70px;
+  border-radius: 10px;
+  height: 88px;
+  background: var(--background-red);
+}
+
+@media (max-width: 720px) {
+
+  .header-desktop,
+  .menuMain {
     display: none;
 
   }
+
   .header-mobile {
     display: flex;
+  }
+
+  .instagram-post {
+    display: grid;
+    grid-template-areas:
+      "imgA imgA"
+      "imgA imgA"
+      "imgB imgB"
+      "imgB imgB"
+      "imgC imgC"
+      "imgC imgC"
+      "imgD imgE";
+    gap: 8px;
   }
 }

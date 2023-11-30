@@ -11,11 +11,12 @@ body a {
   color: var(--text-color);
 }
 
-.body-espacamento{
+.body-espacamento {
   padding: 0 16px;
 }
 
 .containerMain {
+  width: 100%;
   max-width: 1245px;
   margin: 0 auto;
 }
@@ -27,14 +28,16 @@ body a {
   align-items: center;
 }
 
-button {
+button, input, a {
+  transition: var(--transition-05);
+  outline: none;
   border: none;
   cursor: pointer;
-  background: transparent;
+  color: #fff;
 }
 
-button {
-  color: #fff;
+input::placeholder {
+  color: var(--swiper-theme-color)
 }
 
 img {
@@ -44,3 +47,7 @@ img {
 .Main {
   margin-top: 80px !important;
 }
+
+/* button:hover, .swiper-slide a:hover {
+  opacity: 0.8;
+} */

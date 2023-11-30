@@ -307,6 +307,4 @@ export default function fetchProducts() {
   document.addEventListener("DOMContentLoaded", fetchCategories);
   document.addEventListener("DOMContentLoaded", fetchBannerPrincipal);
   document.addEventListener("DOMContentLoaded", fetchBannerSecundario);
-  
-  activeItemsProducts();
 }
