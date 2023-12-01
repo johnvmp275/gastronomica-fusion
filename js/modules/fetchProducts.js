@@ -2,8 +2,7 @@ import activeItemsProducts from "./favoriteProduct.js";
 
 export default function fetchProducts() {
   // Função para inicializar o Swiper
-
-  function initializeSwiper() {
+  function initiializeCategorias() {
     //=====swiper de categorias====
     new Swiper(".swiper-categorias", {
       slidesPerView: 5,
@@ -30,56 +29,10 @@ export default function fetchProducts() {
     });
   }
 
-  function initializeProdutoPrincipal() {
+  function initializeProduto() {
     //=====swiper de produtos====
 
-    new Swiper(".swiper-products-principal", {
-      slidesPerView: 5,
-      spaceBetween: 40,
-      loop: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      breakpoints: {
-        0: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
-        720: {
-          slidesPerView: 5,
-          spaceBetween: 40,
-        },
-      },
-    });
-  }
-  function initializeProdutoSecundario() {
-    //=====swiper de produtos====
-
-    new Swiper(".swiper-products-secundario", {
-      slidesPerView: 5,
-      spaceBetween: 40,
-      loop: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      breakpoints: {
-        0: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
-        720: {
-          slidesPerView: 5,
-          spaceBetween: 40,
-        },
-      },
-    });
-  }
-  function initializeProdutoTerceiro() {
-    //=====swiper de produtos====
-
-    new Swiper(".swiper-products-terceiro", {
+    new Swiper(".swiper-products", {
       slidesPerView: 5,
       spaceBetween: 40,
       loop: true,
@@ -155,9 +108,6 @@ export default function fetchProducts() {
                 `;
         swiperWrapper.appendChild(newSlide);
       });
-
-      // Inicialize o Swiper após adicionar os slides
-      initializeProdutoPrincipal();
     } catch (error) {
       console.error("Houve um erro ao buscar os produtos:", error);
     }
@@ -192,7 +142,6 @@ export default function fetchProducts() {
                 `;
         swiperWrapper.appendChild(newSlide);
       });
-      initializeProdutoSecundario();
     } catch (error) {
       console.error("Houve um erro ao buscar os produtos:", error);
     }
@@ -227,7 +176,6 @@ export default function fetchProducts() {
                 `;
         swiperWrapper.appendChild(newSlide);
       });
-      initializeProdutoTerceiro();
     } catch (error) {
       console.error("Houve um erro ao buscar os produtos:", error);
     }
@@ -253,7 +201,7 @@ export default function fetchProducts() {
       });
 
       // Inicialize o Swiper após adicionar os slides
-      initializeSwiper();
+      initiializeCategorias();
     } catch (error) {
       console.error("Houve um erro ao buscar os produtos:", error);
     }
@@ -316,9 +264,6 @@ export default function fetchProducts() {
                 `;
         divContainer.appendChild(newSlide);
       });
-
-      // Inicialize o Swiper após adicionar os slides
-      initializeSwiper();
     } catch (error) {
       console.error("Houve um erro ao buscar os produtos:", error);
     }
@@ -335,26 +280,38 @@ export default function fetchProducts() {
         let newSlide = document.createElement("a");
         newSlide.setAttribute("href", product.link);
         newSlide.setAttribute("target", product.target);
-        newSlide.classList.add("instagram-post")
+        newSlide.classList.add("instagram-post");
         newSlide.innerHTML = `
              
               <img src="./img/${product.image}" alt="${product.title}">
-
+              <span class="instashopHover material-symbols-outlined">
+              shopping_bag
+              </span>
                 `;
         divContainer.appendChild(newSlide);
       });
-
-      // Inicialize o Swiper após adicionar os slides
-      initializeSwiper();
     } catch (error) {
       console.error("Houve um erro ao buscar os produtos:", error);
     }
   }
 
+  async function awaitProduct() {
+    await fetchProductsPrimario();
+    await fetchProductsSecundario();
+    await fetchProductsTerceiro();
+
+    initializeProduto();
+
+    document.addEventListener("DOMContentLoaded", fetchProductsPrimario);
+    document.addEventListener("DOMContentLoaded", fetchProductsSecundario);
+    document.addEventListener("DOMContentLoaded", fetchProductsTerceiro);
+
+    activeItemsProducts();
+  }
+
+  awaitProduct();
   // Adicione um listener para quando o DOM estiver pronto
-  document.addEventListener("DOMContentLoaded", fetchProductsPrimario);
-  document.addEventListener("DOMContentLoaded", fetchProductsSecundario);
-  document.addEventListener("DOMContentLoaded", fetchProductsTerceiro);
+
   document.addEventListener("DOMContentLoaded", fetchCategories);
   document.addEventListener("DOMContentLoaded", fetchBannerPrincipal);
   document.addEventListener("DOMContentLoaded", fetchBannerSecundario);
