@@ -300,6 +300,57 @@ export default function fetchProducts() {
     }
   }
 
+  async function fetchMidias() {
+    try {
+      const response = await fetch("./json/midiasIcons.json");
+      const data = await response.json();
+
+      const divContainer = document.querySelector(".list-social-medias");
+
+      data.forEach((product) => {
+        let newSlide = document.createElement("li");
+        newSlide.innerHTML = `
+              <a href="${product.link}" target="${product.target}">
+              <img src="./img/${product.image}" alt="${product.title}">
+              </a>
+                `;
+        divContainer.appendChild(newSlide);
+      });
+
+      // Inicialize o Swiper após adicionar os slides
+      initializeSwiper();
+    } catch (error) {
+      console.error("Houve um erro ao buscar os produtos:", error);
+    }
+  }
+
+  async function fetchInstashop() {
+    try {
+      const response = await fetch("./json/instashop.json");
+      const data = await response.json();
+
+      const divContainer = document.querySelector(".instagram-posts");
+
+      data.slice(0, 6).forEach((product) => {
+        let newSlide = document.createElement("a");
+        newSlide.setAttribute("href", product.link);
+        newSlide.setAttribute("target", product.target);
+        newSlide.classList.add("instagram-post")
+        newSlide.innerHTML = `
+             
+              <img src="./img/${product.image}" alt="${product.title}">
+
+                `;
+        divContainer.appendChild(newSlide);
+      });
+
+      // Inicialize o Swiper após adicionar os slides
+      initializeSwiper();
+    } catch (error) {
+      console.error("Houve um erro ao buscar os produtos:", error);
+    }
+  }
+
   // Adicione um listener para quando o DOM estiver pronto
   document.addEventListener("DOMContentLoaded", fetchProductsPrimario);
   document.addEventListener("DOMContentLoaded", fetchProductsSecundario);
@@ -307,4 +358,6 @@ export default function fetchProducts() {
   document.addEventListener("DOMContentLoaded", fetchCategories);
   document.addEventListener("DOMContentLoaded", fetchBannerPrincipal);
   document.addEventListener("DOMContentLoaded", fetchBannerSecundario);
+  document.addEventListener("DOMContentLoaded", fetchMidias);
+  document.addEventListener("DOMContentLoaded", fetchInstashop);
 }
