@@ -1,4 +1,5 @@
 import activeItemsProducts from "./favoriteProduct.js";
+import initCartItem from "./cartItem.js";
 
 export default function fetchProducts() {
   // Função para inicializar o Swiper
@@ -103,7 +104,7 @@ export default function fetchProducts() {
                     </div>
                         <p>${product.title}</p>
                         <strong>${product.price},00</strong>
-                        <a class="product-link">Comprar</a>
+                        <button class="product-link">Comprar</button>
                     </div>
                 `;
         swiperWrapper.appendChild(newSlide);
@@ -137,7 +138,7 @@ export default function fetchProducts() {
                     </div>
                         <p>${product.title}</p>
                         <strong>${product.price},00</strong>
-                        <a class="product-link">Comprar</a>
+                        <button class="product-link">Comprar</button>
                     </div>
                 `;
         swiperWrapper.appendChild(newSlide);
@@ -156,7 +157,7 @@ export default function fetchProducts() {
         ".swiper-products-slideTerceiro"
       );
 
-      data.forEach((product) => {
+      data.forEach((product, key) => {
         let newSlide = document.createElement("div");
         newSlide.classList.add("swiper-slide", "slide-products");
         newSlide.innerHTML = `
@@ -171,7 +172,7 @@ export default function fetchProducts() {
                     </div>
                         <p>${product.title}</p>
                         <strong>${product.price},00</strong>
-                        <a class="product-link">Comprar</a>
+                        <button class="product-link">Comprar</button>
                     </div>
                 `;
         swiperWrapper.appendChild(newSlide);
@@ -300,8 +301,9 @@ export default function fetchProducts() {
     await fetchProductsSecundario();
     await fetchProductsTerceiro();
     await fetchMidias();
-
+    
     initializeProduto();
+    initCartItem();
 
     document.addEventListener("DOMContentLoaded", fetchProductsPrimario);
     document.addEventListener("DOMContentLoaded", fetchProductsSecundario);
@@ -309,6 +311,7 @@ export default function fetchProducts() {
     document.addEventListener("DOMContentLoaded", fetchMidias);
 
     activeItemsProducts();
+
   }
 
   awaitProduct();

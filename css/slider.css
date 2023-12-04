@@ -135,7 +135,7 @@ section .swiper-products .slide-products,
   font-size: 20px;
 }
 
-.slide-products a {
+.slide-products .product-link {
   cursor: pointer;
   padding: 12px 16px;
   border-radius: 10px;
