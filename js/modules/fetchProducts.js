@@ -304,12 +304,14 @@ export default function fetchProducts() {
     await fetchProductsPrimario();
     await fetchProductsSecundario();
     await fetchProductsTerceiro();
+    await fetchMidias();
 
     initializeProduto();
 
     document.addEventListener("DOMContentLoaded", fetchProductsPrimario);
     document.addEventListener("DOMContentLoaded", fetchProductsSecundario);
     document.addEventListener("DOMContentLoaded", fetchProductsTerceiro);
+    document.addEventListener("DOMContentLoaded", fetchMidias);
 
     activeItemsProducts();
   }
@@ -317,5 +319,9 @@ export default function fetchProducts() {
   awaitProduct();
   // Adicione um listener para quando o DOM estiver pronto
 
-
+  document.addEventListener("DOMContentLoaded", fetchCategories);
+  document.addEventListener("DOMContentLoaded", fetchBannerPrincipal);
+  document.addEventListener("DOMContentLoaded", fetchBannerSecundario);
+  document.addEventListener("DOMContentLoaded", fetchMidias);
+  document.addEventListener("DOMContentLoaded", fetchInstashop);
 }
