@@ -13,13 +13,13 @@
     },
     {
         "id" : 3,
-        "image" : "whatsapp.png",
+        "image" : "whatsapp-teste.png",
         "link" : "https://www.youtube.com/watch?v=BBJa32lCaaY",
         "target" : "_blank"
     },
     {
         "id" : 4,
-        "image" : "youtube.png",
+        "image" : "youtube-teste.png",
         "link" : "https://www.youtube.com/watch?v=BBJa32lCaaY",
         "target" : "_blank"
     }
