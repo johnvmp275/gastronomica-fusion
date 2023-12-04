@@ -294,11 +294,6 @@ export default function fetchProducts() {
       console.error("Houve um erro ao buscar os produtos:", error);
     }
   }
-  
-  document.addEventListener("DOMContentLoaded", fetchMidias);
-  document.addEventListener("DOMContentLoaded", fetchCategories);
-  document.addEventListener("DOMContentLoaded", fetchBannerPrincipal);
-  document.addEventListener("DOMContentLoaded", fetchInstashop);
 
   async function awaitProduct() {
     await fetchProductsPrimario();
@@ -322,6 +317,5 @@ export default function fetchProducts() {
   document.addEventListener("DOMContentLoaded", fetchCategories);
   document.addEventListener("DOMContentLoaded", fetchBannerPrincipal);
   document.addEventListener("DOMContentLoaded", fetchBannerSecundario);
-  document.addEventListener("DOMContentLoaded", fetchMidias);
   document.addEventListener("DOMContentLoaded", fetchInstashop);
 }
