@@ -82,6 +82,68 @@ export default function fetchProducts() {
     });
   }
 
+  async function fetchAndGenerateMenu() {
+    try {
+      // Fetch do JSON do menu
+      const response = await fetch("./json/menu.json"); // Substitua pelo caminho correto do seu arquivo JSON de menu
+      const menuData = await response.json();
+
+      // Geração dinâmica do menu
+      const menuContainer = document.querySelector(".menuMain");
+      menuContainer.innerHTML = generateMenuHTML(menuData.menu);
+
+      function generateMenuHTML(menu) {
+        let html = "";
+        menu.forEach((item) => {
+          html += `<li class="navigation-item"><a href="" class="navigationLink">${item.name}</a>`;
+          if (item.submenus && item.submenus.length > 0) {
+            html += `<div class="sub-container">
+                       <div class="navigation-container__dropdown">
+                         <ul class="navigation-dropdown">`;
+            item.submenus.forEach((subitem) => {
+              html += `<li><a href="">${subitem.nvl1}</a>`;
+              if (subitem.nvl2 && subitem.nvl2.length > 0) {
+                html += `<div class="sub-container-dropdown">
+                           <div class="sub-navigation-container__dropdown">
+                             <ul>`;
+                subitem.nvl2.forEach((subsubitem) => {
+                  html += `<li><a href="">${subsubitem.nvl3}</a></li>`;
+                });
+                html += `</ul></div></div>`;
+              }
+              html += `</li>`;
+            });
+            html += `</ul><div class="banner-dropdown">
+                       <img src="${item.banner}" alt="" srcset="">
+                     </div></div></div>`;
+          }
+          html += `</li>`;
+        });
+        return html;
+      }
+
+      document.querySelectorAll(".navigation-item").forEach((item) => {
+        item.addEventListener("mouseover", function () {
+          document.querySelector(".header-navigation__black").style.display =
+            "block";
+        });
+      });
+
+      document.querySelectorAll(".navigation-item").forEach((item) => {
+        item.addEventListener("mouseout", function () {
+          document.querySelector(".header-navigation__black").style.display =
+            "none";
+        });
+      });
+      
+    } catch (error) {
+      console.error("Houve um erro ao buscar o menu:", error);
+    }
+  }
+
+  // Chame a função fetchAndGenerateMenu para carregar e gerar dinamicamente o menu
+  fetchAndGenerateMenu();
+
   async function fetchProductsPrimario() {
     try {
       const response = await fetch("./json/slidePrimario.json");
@@ -301,7 +363,7 @@ export default function fetchProducts() {
     await fetchProductsSecundario();
     await fetchProductsTerceiro();
     await fetchMidias();
-    
+
     initializeProduto();
     initCartItem();
 
@@ -311,7 +373,6 @@ export default function fetchProducts() {
     document.addEventListener("DOMContentLoaded", fetchMidias);
 
     activeItemsProducts();
-
   }
 
   awaitProduct();

@@ -1,0 +1,90 @@
+{
+    "menu": [
+      {
+        "name": "Churrasco",
+        "submenus": [
+          { "nvl1": "teste" },
+          { "nvl1": "teste" },
+          { "nvl1": "teste" },
+          { "nvl1": "teste" },
+          { "nvl1": "teste" }
+        ],
+        "banner": "./img/churrasco.jpg"
+      },
+      {
+        "name": "Sobremesas",
+        "submenus": [
+          { "nvl1": "teste" },
+          { "nvl1": "teste" },
+          { "nvl1": "teste" },
+          { "nvl1": "teste" },
+          { "nvl1": "teste" }
+        ],
+        "banner": "./img/sobremesa.jpg"
+      },
+      {
+        "name": "Massas"
+      },
+      {
+        "name": "Frutos-do-mar",
+        "submenus": [
+          {
+            "nvl1": "teste",
+            "nvl2": [
+              { "nvl3": "teste" },
+              { "nvl3": "teste" },
+              { "nvl3": "teste" },
+              { "nvl3": "teste" }
+            ]
+          },
+          {
+            "nvl1": "teste",
+            "nvl2": [
+              { "nvl3": "teste" },
+              { "nvl3": "teste" },
+              { "nvl3": "teste" },
+              { "nvl3": "teste" }
+            ]
+          },
+          {
+            "nvl1": "teste",
+            "nvl2": [
+              { "nvl3": "teste" },
+              { "nvl3": "teste" },
+              { "nvl3": "teste" },
+              { "nvl3": "teste" }
+            ]
+          },
+          {
+            "nvl1": "teste",
+            "nvl2": [
+              { "nvl3": "teste" },
+              { "nvl3": "teste" },
+              { "nvl3": "teste" },
+              { "nvl3": "teste" }
+            ]
+          },
+          {
+            "nvl1": "teste",
+            "nvl2": [
+              { "nvl3": "teste" },
+              { "nvl3": "teste" },
+              { "nvl3": "teste" },
+              { "nvl3": "teste" }
+            ]
+          }
+        ],
+        "banner": "./img/frutos-do-mar.jpg"
+      },
+      {
+        "name": "Saladas"
+      },
+      {
+        "name": "Aperitivos"
+      },
+      {
+        "name": "Carnes"
+      }
+    ]
+  }
+  
