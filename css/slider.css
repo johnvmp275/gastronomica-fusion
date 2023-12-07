@@ -123,7 +123,7 @@ section .swiper-products .slide-products,
   bottom: 0;
 }
 
-.product-image img {
+.product-image {
   max-width: 300px;
   display: block;
   width: 100%;
