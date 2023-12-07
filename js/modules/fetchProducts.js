@@ -264,8 +264,8 @@ export default function fetchProducts() {
         let newSlide = document.createElement("div");
         newSlide.classList.add("swiper-slide", "slide-categorias");
         newSlide.innerHTML = `
-                <div class="product-image">
-                            <img src="./img/${product.image}" alt="${product.title}" srcset="">
+                <div class="categoria-card">
+                            <img class="categorias-image" src="./img/${product.image}" alt="${product.title}" srcset="">
                         </div>
                         <strong>${product.title}</strong>
                 `;

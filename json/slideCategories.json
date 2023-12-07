@@ -2,17 +2,17 @@
     {
         "id": 1,
         "title": "Hambúrguer Clássico",
-        "image": "hamburguer.jpg"
+        "image": "churrasco.jpg"
     },
     {
         "id": 2,
         "title": "Hambúrguer Vegetariano",
-        "image": "hamburguer.jpg"
+        "image": "frutos-do-mar.jpg"
     },
     {
         "id": 3,
         "title": "Hambúrguer de Frango",
-        "image": "hamburguer.jpg"
+        "image": "sobremesa.jpg"
     },
     {
         "id": 4,
