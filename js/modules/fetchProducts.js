@@ -82,7 +82,7 @@ export default function fetchProducts() {
     });
   }
 
-  async function fetchAndGenerateMenu() {
+  async function fetchMenu() {
     try {
       // Fetch do JSON do menu
       const response = await fetch("./json/menu.json"); // Substitua pelo caminho correto do seu arquivo JSON de menu
@@ -94,7 +94,7 @@ export default function fetchProducts() {
 
       function generateMenuHTML(menu) {
         let html = "";
-        menu.forEach((item) => {
+        menu.slice(0, 9).forEach((item) => {
           html += `<li class="navigation-item"><a href="" class="navigationLink">${item.name}</a>`;
           if (item.submenus && item.submenus.length > 0) {
             html += `<div class="sub-container">
@@ -124,8 +124,11 @@ export default function fetchProducts() {
 
       document.querySelectorAll(".navigation-item").forEach((item) => {
         item.addEventListener("mouseover", function () {
-          document.querySelector(".header-navigation__black").style.display =
-            "block";
+          const subContainer = this.querySelector('.sub-container');
+          if (subContainer) {
+            document.querySelector(".header-navigation__black").style.display =
+              "block";
+          }
         });
       });
 
@@ -135,14 +138,14 @@ export default function fetchProducts() {
             "none";
         });
       });
-      
+
+
     } catch (error) {
       console.error("Houve um erro ao buscar o menu:", error);
     }
   }
 
-  // Chame a função fetchAndGenerateMenu para carregar e gerar dinamicamente o menu
-  fetchAndGenerateMenu();
+  // Primeira vitrine de produtos 
 
   async function fetchProductsPrimario() {
     try {
@@ -175,6 +178,8 @@ export default function fetchProducts() {
       console.error("Houve um erro ao buscar os produtos:", error);
     }
   }
+
+  // Segunda vitrine de produtos 
 
   async function fetchProductsSecundario() {
     try {
@@ -210,6 +215,8 @@ export default function fetchProducts() {
     }
   }
 
+  // Terceira vitrine de produtos 
+
   async function fetchProductsTerceiro() {
     try {
       const response = await fetch("./json/slideTerceiro.json");
@@ -244,6 +251,8 @@ export default function fetchProducts() {
     }
   }
 
+  //fetch categorias de produtos
+
   async function fetchCategories() {
     try {
       const response = await fetch("./json/slideCategories.json");
@@ -270,6 +279,8 @@ export default function fetchProducts() {
     }
   }
 
+  //fetch banner 
+
   async function fetchBannerPrincipal() {
     try {
       const response = await fetch("./json/bannerPrincipal.json");
@@ -291,6 +302,8 @@ export default function fetchProducts() {
     }
   }
 
+  //fetch banner 
+
   async function fetchBannerSecundario() {
     try {
       const response = await fetch("./json/bannerSecundario.json");
@@ -310,6 +323,8 @@ export default function fetchProducts() {
       console.error("Houve um erro ao buscar os produtos:", error);
     }
   }
+
+  //Midias digitais fetch
 
   async function fetchMidias() {
     try {
@@ -331,6 +346,8 @@ export default function fetchProducts() {
       console.error("Houve um erro ao buscar os produtos:", error);
     }
   }
+
+  //Instagram shop Fetch
 
   async function fetchInstashop() {
     try {
@@ -358,11 +375,14 @@ export default function fetchProducts() {
     }
   }
 
+  //inicialização do carregamento de itens  
+
   async function awaitProduct() {
     await fetchProductsPrimario();
     await fetchProductsSecundario();
     await fetchProductsTerceiro();
     await fetchMidias();
+    await fetchMenu();
 
     initializeProduto();
     initCartItem();
@@ -371,11 +391,13 @@ export default function fetchProducts() {
     document.addEventListener("DOMContentLoaded", fetchProductsSecundario);
     document.addEventListener("DOMContentLoaded", fetchProductsTerceiro);
     document.addEventListener("DOMContentLoaded", fetchMidias);
-
+    document.addEventListener("DOMContentLoaded", fetchMenu);
+    
     activeItemsProducts();
   }
 
   awaitProduct();
+
   // Adicione um listener para quando o DOM estiver pronto
 
   document.addEventListener("DOMContentLoaded", fetchCategories);
