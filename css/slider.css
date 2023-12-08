@@ -135,6 +135,10 @@ section .swiper-products .slide-products,
   object-fit: cover;
 }
 
+.product-image img{
+  height: 180px;
+}
+
 .slide-products strong {
   font-size: 20px;
 }
@@ -226,5 +230,9 @@ section .swiper-products .slide-products,
     width: 180px;
     height: 180px;
     overflow: hidden;
+  }
+
+  .product-image img{
+    height: 160px;
   }
 }

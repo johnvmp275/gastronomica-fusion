@@ -1,0 +1,26 @@
+{
+    "banner_principal": [
+        {
+            "id": 1,
+            "title": "sabores",
+            "image": "sabores.jpg"
+        },
+        {
+            "id": 2,
+            "title": "delicias",
+            "image": "delicias.jpg"
+        },
+        {
+            "id": 3,
+            "title": "experiencia",
+            "image": "experiencia.jpg"
+        }
+    ],
+    "segundo_banner": [
+        {
+            "id": 1,
+            "title": "experiencia",
+            "image": "experiencia.jpg"
+        }
+    ]
+}

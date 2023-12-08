@@ -1,13 +1,11 @@
 import activeItemsProducts from "./favoriteProduct.js";
-import initCartItem from "./cartItem.js";
+import addToCard from "./cartItem.js"
 
 export default function fetchProducts() {
   // Função para inicializar o Swiper
   function initiializeCategorias() {
     //=====swiper de categorias====
     new Swiper(".swiper-categorias", {
-      slidesPerView: 5,
-      spaceBetween: 40,
       loop: true,
       autoplay: {
         delay: 3000,
@@ -23,8 +21,8 @@ export default function fetchProducts() {
           spaceBetween: 20,
         },
         720: {
-          slidesPerView: 5,
-          spaceBetween: 40,
+          slidesPerView: 4.3,
+          spaceBetween: 20,
         },
       },
     });
@@ -34,8 +32,6 @@ export default function fetchProducts() {
     //=====swiper de produtos====
 
     new Swiper(".swiper-products", {
-      slidesPerView: 5,
-      spaceBetween: 40,
       loop: true,
       pagination: {
         el: ".swiper-pagination",
@@ -44,11 +40,11 @@ export default function fetchProducts() {
       breakpoints: {
         0: {
           slidesPerView: 2,
-          spaceBetween: 20,
+          spaceBetween: 10,
         },
         720: {
-          slidesPerView: 5,
-          spaceBetween: 40,
+          slidesPerView: 5.3,
+          spaceBetween: 10,
         },
       },
     });
@@ -149,29 +145,29 @@ export default function fetchProducts() {
 
   async function fetchProductsPrimario() {
     try {
-      const response = await fetch("./json/slidePrimario.json");
+      const response = await fetch("./json/produtos.json");
       const data = await response.json();
 
       const swiperWrapper = document.querySelector(".swiper-products-slide");
+      const segundoSlide = data.primeiro_slide;
 
-      data.forEach((product) => {
+      segundoSlide.forEach((product) => {
         let newSlide = document.createElement("div");
         newSlide.classList.add("swiper-slide", "slide-products");
         newSlide.innerHTML = `
-                <div class="product-favorite">
-                        <button class="button-favorite">
-                            <img src="./img/favorite.png" alt="favorite">
-                            <img src="./img/favorite-active.png" alt="favorite-active">
-                        </button>
-                    </div>
-                    <div class="product-image">
-                        <img src="./img/${product.image}" alt="${product.title}">
-                    </div>
-                        <p>${product.title}</p>
-                        <strong>${product.price},00</strong>
-                        <button class="product-link">Comprar</button>
-                    </div>
-                `;
+              <div class="product-favorite">
+                  <button class="button-favorite" data-productId="${product.id}">
+                      <img src="./img/favorite.png" alt="favorite">
+                      <img src="./img/favorite-active.png" alt="favorite-active">
+                  </button>
+              </div>
+              <div class="product-image">
+                  <img src="./img/${product.image}" alt="${product.title}">
+              </div>
+              <p>${product.title}</p>
+              <strong>${product.price},00</strong>
+                <button class="product-link" onclick="addToCard(${product.id})">Comprar</button>
+          `;
         swiperWrapper.appendChild(newSlide);
       });
     } catch (error) {
@@ -183,31 +179,29 @@ export default function fetchProducts() {
 
   async function fetchProductsSecundario() {
     try {
-      const response = await fetch("./json/slideSecundario.json");
+      const response = await fetch("./json/produtos.json");
       const data = await response.json();
 
-      const swiperWrapper = document.querySelector(
-        ".swiper-products-slideSecundario"
-      );
+      const swiperWrapper = document.querySelector(".swiper-products-slideSecundario");
+      const segundoSlide = data.segundo_slide;
 
-      data.forEach((product) => {
+      segundoSlide.forEach((product) => {
         let newSlide = document.createElement("div");
         newSlide.classList.add("swiper-slide", "slide-products");
         newSlide.innerHTML = `
-                <div class="product-favorite">
-                        <button class="button-favorite">
-                            <img src="./img/favorite.png" alt="favorite">
-                            <img src="./img/favorite-active.png" alt="favorite-active">
-                        </button>
-                    </div>
-                    <div class="product-image">
-                        <img src="./img/${product.image}" alt="${product.title}">
-                    </div>
-                        <p>${product.title}</p>
-                        <strong>${product.price},00</strong>
-                        <button class="product-link">Comprar</button>
-                    </div>
-                `;
+              <div class="product-favorite">
+                  <button class="button-favorite" data-productId="${product.id}">
+                      <img src="./img/favorite.png" alt="favorite">
+                      <img src="./img/favorite-active.png" alt="favorite-active">
+                  </button>
+              </div>
+              <div class="product-image">
+                  <img src="./img/${product.image}" alt="${product.title}">
+              </div>
+              <p>${product.title}</p>
+              <strong>${product.price},00</strong>
+                <button class="product-link" onclick="addToCard(${product.id})">Comprar</button>
+          `;
         swiperWrapper.appendChild(newSlide);
       });
     } catch (error) {
@@ -219,31 +213,30 @@ export default function fetchProducts() {
 
   async function fetchProductsTerceiro() {
     try {
-      const response = await fetch("./json/slideTerceiro.json");
+      const response = await fetch("./json/produtos.json");
       const data = await response.json();
 
-      const swiperWrapper = document.querySelector(
-        ".swiper-products-slideTerceiro"
-      );
+      const swiperWrapper = document.querySelector(".swiper-products-slideTerceiro");
 
-      data.forEach((product, key) => {
+      const terceiroSlide = data.terceiro_slide;
+
+      terceiroSlide.forEach((product) => {
         let newSlide = document.createElement("div");
         newSlide.classList.add("swiper-slide", "slide-products");
         newSlide.innerHTML = `
                 <div class="product-favorite">
-                        <button class="button-favorite">
-                            <img src="./img/favorite.png" alt="favorite">
-                            <img src="./img/favorite-active.png" alt="favorite-active">
-                        </button>
-                    </div>
-                    <div class="product-image">
-                        <img src="./img/${product.image}" alt="${product.title}">
-                    </div>
-                        <p>${product.title}</p>
-                        <strong>${product.price},00</strong>
-                        <button class="product-link">Comprar</button>
-                    </div>
-                `;
+                    <button class="button-favorite" data-productId="${product.id}">
+                        <img src="./img/favorite.png" alt="favorite">
+                        <img src="./img/favorite-active.png" alt="favorite-active">
+                    </button>
+                </div>
+                <div class="product-image">
+                    <img src="./img/${product.image}" alt="${product.title}">
+                </div>
+                <p>${product.title}</p>
+                <strong>${product.price},00</strong>
+                  <button class="product-link" onclick="addToCard(${product.id})">Comprar</button>
+            `;
         swiperWrapper.appendChild(newSlide);
       });
     } catch (error) {
@@ -251,11 +244,12 @@ export default function fetchProducts() {
     }
   }
 
+
   //fetch categorias de produtos
 
   async function fetchCategories() {
     try {
-      const response = await fetch("./json/slideCategories.json");
+      const response = await fetch("./json/categoriasProdutos.json");
       const data = await response.json();
 
       const swiperWrapper = document.querySelector(".swiper-categories-slide");
@@ -283,12 +277,13 @@ export default function fetchProducts() {
 
   async function fetchBannerPrincipal() {
     try {
-      const response = await fetch("./json/bannerPrincipal.json");
+      const response = await fetch("./json/banners.json");
       const data = await response.json();
 
       const swiperWrapper = document.querySelector(".swiper-banner-principal");
+      const primeiroBanner = data.banner_principal;
 
-      data.forEach((product) => {
+      primeiroBanner.forEach((product) => {
         let newSlide = document.createElement("div");
         newSlide.classList.add("swiper-slide");
         newSlide.innerHTML = `
@@ -306,11 +301,13 @@ export default function fetchProducts() {
 
   async function fetchBannerSecundario() {
     try {
-      const response = await fetch("./json/bannerSecundario.json");
+      const response = await fetch("./json/banners.json");
       const data = await response.json();
-      const swiperWrapper = document.querySelector(".swiper-banner-secundario");
 
-      data.forEach((product) => {
+      const swiperWrapper = document.querySelector(".swiper-banner-secundario");
+      const segundoBanner = data.segundo_banner;
+
+      segundoBanner.forEach((product) => {
         let newSlide = document.createElement("div");
         newSlide.classList.add("swiper-slide");
         newSlide.innerHTML = `
@@ -385,19 +382,17 @@ export default function fetchProducts() {
     await fetchMenu();
 
     initializeProduto();
-    initCartItem();
 
     document.addEventListener("DOMContentLoaded", fetchProductsPrimario);
     document.addEventListener("DOMContentLoaded", fetchProductsSecundario);
     document.addEventListener("DOMContentLoaded", fetchProductsTerceiro);
     document.addEventListener("DOMContentLoaded", fetchMidias);
     document.addEventListener("DOMContentLoaded", fetchMenu);
-    
+
     activeItemsProducts();
   }
 
   awaitProduct();
-
   // Adicione um listener para quando o DOM estiver pronto
 
   document.addEventListener("DOMContentLoaded", fetchCategories);

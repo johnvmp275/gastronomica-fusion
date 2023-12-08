@@ -12,6 +12,10 @@
   transition: 0.5s;
 }
 
+carrinho-container {width: 100%;
+  height: 100%;
+}
+
 .cart.active .cartSide {
   transform: translateX(0px);
 }

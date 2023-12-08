@@ -1,0 +1,188 @@
+{
+    "primeiro_slide": [
+        {
+            "id": 1,
+            "title": "Hambúrguer Clássico",
+            "image": "churrasco.jpg",
+            "price": 2000
+        },
+        {
+            "id": 2,
+            "title": "Hambúrguer Vegetariano",
+            "image": "hamburguer.jpg",
+            "price": 20
+        },
+        {
+            "id": 3,
+            "title": "Hambúrguer de Frango",
+            "image": "sobremesa.jpg",
+            "price": 20
+        },
+        {
+            "id": 4,
+            "title": "Hambúrguer de Peixe",
+            "image": "hamburguer.jpg",
+            "price": 20
+        },
+        {
+            "id": 5,
+            "title": "Hambúrguer Picante",
+            "image": "frutos-do-mar.jpg",
+            "price": 20
+        },
+        {
+            "id": 6,
+            "title": "Hambúrguer Duplo",
+            "image": "hamburguer.jpg",
+            "price": 20
+        },
+        {
+            "id": 7,
+            "title": "Hambúrguer Supremo",
+            "image": "hamburguer.jpg",
+            "price": 20
+        },
+        {
+            "id": 8,
+            "title": "Hambúrguer Gourmet",
+            "image": "hamburguer.jpg",
+            "price": 20
+        },
+        {
+            "id": 9,
+            "title": "Hambúrguer Clássico",
+            "image": "hamburguer.jpg",
+            "price": 20
+        },
+        {
+            "id": 10,
+            "title": "Hambúrguer Vegetariano",
+            "image": "hamburguer.jpg",
+            "price": 20
+        }
+    ],
+    "segundo_slide": [
+        {
+            "id": 11,
+            "title": "Hambúrguer Clássico",
+            "image": "hamburguer.jpg",
+            "price": 20
+        },
+        {
+            "id": 12,
+            "title": "Hambúrguer Vegetariano",
+            "image": "hamburguer.jpg",
+            "price": 20
+        },
+        {
+            "id": 13,
+            "title": "Hambúrguer de Frango",
+            "image": "hamburguer.jpg",
+            "price": 20
+        },
+        {
+            "id": 14,
+            "title": "Hambúrguer de Peixe",
+            "image": "hamburguer.jpg",
+            "price": 20
+        },
+        {
+            "id": 15,
+            "title": "Hambúrguer Picante",
+            "image": "hamburguer.jpg",
+            "price": 20
+        },
+        {
+            "id": 16,
+            "title": "Hambúrguer Duplo",
+            "image": "hamburguer.jpg",
+            "price": 20
+        },
+        {
+            "id": 17,
+            "title": "Hambúrguer Supremo",
+            "image": "hamburguer.jpg",
+            "price": 20
+        },
+        {
+            "id": 18,
+            "title": "Hambúrguer Gourmet",
+            "image": "hamburguer.jpg",
+            "price": 20
+        },
+        {
+            "id": 19,
+            "title": "Hambúrguer Clássico",
+            "image": "hamburguer.jpg",
+            "price": 20
+        },
+        {
+            "id": 20,
+            "title": "Hambúrguer Vegetariano",
+            "image": "hamburguer.jpg",
+            "price": 20
+        }
+    ],
+    "terceiro_slide": [
+        {
+            "id": 21,
+            "title": "Hambúrguer Clássico",
+            "image": "hamburguer.jpg",
+            "price": 20
+        },
+        {
+            "id": 22,
+            "title": "Hambúrguer Vegetariano",
+            "image": "hamburguer.jpg",
+            "price": 20
+        },
+        {
+            "id": 23,
+            "title": "Hambúrguer de Frango",
+            "image": "hamburguer.jpg",
+            "price": 20
+        },
+        {
+            "id": 24,
+            "title": "Hambúrguer de Peixe",
+            "image": "hamburguer.jpg",
+            "price": 20
+        },
+        {
+            "id": 25,
+            "title": "Hambúrguer Picante",
+            "image": "hamburguer.jpg",
+            "price": 20
+        },
+        {
+            "id": 26,
+            "title": "Hambúrguer Duplo",
+            "image": "hamburguer.jpg",
+            "price": 20
+        },
+        {
+            "id": 27,
+            "title": "Hambúrguer Supremo",
+            "image": "hamburguer.jpg",
+            "price": 20
+        },
+        {
+            "id": 28,
+            "title": "Hambúrguer Gourmet",
+            "image": "hamburguer.jpg",
+            "price": 20
+        },
+        {
+            "id": 29,
+            "title": "Hambúrguer Clássico",
+            "image": "hamburguer.jpg",
+            "price": 20
+        },
+        {
+            "id": 30,
+            "title": "Hambúrguer Vegetariano",
+            "image": "hamburguer.jpg",
+            "price": 20
+        }
+    ]
+}
