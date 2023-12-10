@@ -1,5 +1,6 @@
 import activeItemsProducts from "./favoriteProduct.js";
-import addToCard from "./cartItem.js"
+import addToCard from "./cartItem.js";
+import activeCart from "./activeCart.js";
 
 export default function fetchProducts() {
   // Função para inicializar o Swiper
@@ -168,6 +169,10 @@ export default function fetchProducts() {
               <strong>${product.price},00</strong>
                 <button class="product-link" onclick="addToCard(${product.id})">Comprar</button>
           `;
+        const productLinkButton = newSlide.querySelector(".product-link");
+        productLinkButton.addEventListener("click", () => {
+          addToCard(product.id);
+        });
         swiperWrapper.appendChild(newSlide);
       });
     } catch (error) {
@@ -202,6 +207,10 @@ export default function fetchProducts() {
               <strong>${product.price},00</strong>
                 <button class="product-link" onclick="addToCard(${product.id})">Comprar</button>
           `;
+        const productLinkButton = newSlide.querySelector(".product-link");
+        productLinkButton.addEventListener("click", () => {
+          addToCard(product.id);
+        });
         swiperWrapper.appendChild(newSlide);
       });
     } catch (error) {
@@ -237,6 +246,10 @@ export default function fetchProducts() {
                 <strong>${product.price},00</strong>
                   <button class="product-link" onclick="addToCard(${product.id})">Comprar</button>
             `;
+        const productLinkButton = newSlide.querySelector(".product-link");
+        productLinkButton.addEventListener("click", () => {
+          addToCard(product.id);
+        });
         swiperWrapper.appendChild(newSlide);
       });
     } catch (error) {
@@ -262,7 +275,8 @@ export default function fetchProducts() {
                             <img class="categorias-image" src="./img/${product.image}" alt="${product.title}" srcset="">
                         </div>
                         <strong>${product.title}</strong>
-                `;
+              
+               `;
         swiperWrapper.appendChild(newSlide);
       });
 
@@ -288,7 +302,8 @@ export default function fetchProducts() {
         newSlide.classList.add("swiper-slide");
         newSlide.innerHTML = `
                         <img src="./img/${product.image}" alt="${product.title}">
-                `;
+              
+        `;
         swiperWrapper.appendChild(newSlide);
       });
       initializePrincipalBanner();
@@ -312,7 +327,8 @@ export default function fetchProducts() {
         newSlide.classList.add("swiper-slide");
         newSlide.innerHTML = `
                         <img src="./img/${product.image}" alt="${product.title}">
-                `;
+              
+        `;
         swiperWrapper.appendChild(newSlide);
       });
       initializeBannerSecundario();
@@ -390,6 +406,7 @@ export default function fetchProducts() {
     document.addEventListener("DOMContentLoaded", fetchMenu);
 
     activeItemsProducts();
+    activeCart();
   }
 
   awaitProduct();
