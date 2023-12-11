@@ -21,6 +21,26 @@ function checkCartEmpty() {
 
 }
 
+function addQuantityEvents(container) {
+    container.addEventListener('click', (event) => {
+        const target = event.target;
+
+        if (target.classList.contains('btn-adicionar')) {
+            const inputValor = target.parentElement.querySelector('.item-valor');
+            let valor = parseInt(inputValor.value);
+            valor++;
+            inputValor.value = valor;
+        } else if (target.classList.contains('btn-diminuir')) {
+            const inputValor = target.parentElement.querySelector('.item-valor');
+            if (inputValor.value >= 2) {
+                let valor = parseInt(inputValor.value);
+                valor--;
+                inputValor.value = valor;
+            }
+        }
+    });
+}
+
 checkCartEmpty()
 
 export default function addToCart(productId) {
@@ -80,6 +100,8 @@ export default function addToCart(productId) {
 
                     checkCartEmpty();
 
+                    addQuantityEvents(cartItem);
+
                     const removeButtons = carrinhoContainer.querySelectorAll('.delete');
                     const cartItems = carrinhoContainer.querySelectorAll('.cart-item');
 
@@ -89,27 +111,7 @@ export default function addToCart(productId) {
                             checkCartEmpty();
                         });
 
-                        const buttonQntAdd = document.querySelectorAll('.btn-adicionar');
-                        const buttonQntDiminuir = document.querySelectorAll('.btn-diminuir');
-                        const inputValor = document.querySelectorAll('.item-valor');
-
-                        buttonQntAdd.forEach((button, index) => {
-                            button.addEventListener('click', () => {
-                                let valor = parseInt(inputValor[index].value);
-                                valor++;
-                                inputValor[index].value = valor;
-                            });
-                        });
-
-                        buttonQntDiminuir.forEach((button, index) => {
-                            button.addEventListener('click', () => {
-                                if (inputValor[index].value >= 2) {
-                                    let valor = parseInt(inputValor[index].value);
-                                    valor--;
-                                    inputValor[index].value = valor;
-                                }
-                            });
-                        });
+                       
                     });
 
                 } else {
@@ -133,5 +135,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const productId = button.dataset.productId;
             addToCart(productId);
         });
+    });
+
+    const cartItems = document.querySelectorAll('.cart-item');
+    cartItems.forEach(item => {
+        addQuantityEvents(item);
     });
 });
