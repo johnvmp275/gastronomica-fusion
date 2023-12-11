@@ -19,7 +19,6 @@ function checkCartEmpty() {
         cartRodape.style.display = 'block';
     }
 
-    
 }
 
 checkCartEmpty()
@@ -47,8 +46,19 @@ export default function addToCart(productId) {
                         </span>
                         </div>
                         <strong>${product.price},00</strong>
-                        <div>
+                        <div class="item-rodape">
+                        <p>Quantidade:</p>
+                        <div class="item-qtd">
+                        <button type="button" class="btn-diminuir">
+                        -
+                        </button>
+                        <input type="tel" value="1" class="item-valor">
+                        <button type="button" class="btn-adicionar">
+                        +
+                        </button>
+                        </div>
                 `;
+
 
                 const carrinhoContainer = document.querySelector('.carrinho-container');
 
@@ -56,6 +66,8 @@ export default function addToCart(productId) {
                 const alreadyInCart = Array.from(carrinhoContainer.querySelectorAll('.cart-item')).find(item => {
                     return item.dataset.productId === `${product.id}`;
                 });
+
+
 
                 const carrinhoVazio = carrinhoContainer.querySelector('.carrinho-vazio');
                 if (carrinhoVazio) {
@@ -75,6 +87,28 @@ export default function addToCart(productId) {
                         removeButton.addEventListener('click', () => {
                             cartItems[index].remove();
                             checkCartEmpty();
+                        });
+
+                        const buttonQntAdd = document.querySelectorAll('.btn-adicionar');
+                        const buttonQntDiminuir = document.querySelectorAll('.btn-diminuir');
+                        const inputValor = document.querySelectorAll('.item-valor');
+
+                        buttonQntAdd.forEach((button, index) => {
+                            button.addEventListener('click', () => {
+                                let valor = parseInt(inputValor[index].value);
+                                valor++;
+                                inputValor[index].value = valor;
+                            });
+                        });
+
+                        buttonQntDiminuir.forEach((button, index) => {
+                            button.addEventListener('click', () => {
+                                if (inputValor[index].value >= 2) {
+                                    let valor = parseInt(inputValor[index].value);
+                                    valor--;
+                                    inputValor[index].value = valor;
+                                }
+                            });
                         });
                     });
 

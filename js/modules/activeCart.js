@@ -35,5 +35,5 @@ export default function activeCart() {
     cartRight.classList.remove("active");
     body.classList.remove("hidden");
   });
-
+  
 }
