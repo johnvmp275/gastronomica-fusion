@@ -82,7 +82,7 @@ export default function fetchProducts() {
   async function fetchMenu() {
     try {
       // Fetch do JSON do menu
-      const response = await fetch("./json/menu.json"); // Substitua pelo caminho correto do seu arquivo JSON de menu
+      const response = await fetch("./json/menu/menu.json"); // Substitua pelo caminho correto do seu arquivo JSON de menu
       const menuData = await response.json();
 
       // Geração dinâmica do menu
@@ -140,13 +140,14 @@ export default function fetchProducts() {
     } catch (error) {
       console.error("Houve um erro ao buscar o menu:", error);
     }
+
   }
 
   // Primeira vitrine de produtos 
 
   async function fetchProductsPrimario() {
     try {
-      const response = await fetch("./json/produtos.json");
+      const response = await fetch("./json/produto/vitrine/produtos.json");
       const data = await response.json();
 
       const swiperWrapper = document.querySelector(".swiper-products-slide");
@@ -184,7 +185,7 @@ export default function fetchProducts() {
 
   async function fetchProductsSecundario() {
     try {
-      const response = await fetch("./json/produtos.json");
+      const response = await fetch("./json/produto/vitrine/produtos.json");
       const data = await response.json();
 
       const swiperWrapper = document.querySelector(".swiper-products-slideSecundario");
@@ -222,7 +223,7 @@ export default function fetchProducts() {
 
   async function fetchProductsTerceiro() {
     try {
-      const response = await fetch("./json/produtos.json");
+      const response = await fetch("./json/produto/vitrine/produtos.json");
       const data = await response.json();
 
       const swiperWrapper = document.querySelector(".swiper-products-slideTerceiro");
@@ -262,7 +263,7 @@ export default function fetchProducts() {
 
   async function fetchCategories() {
     try {
-      const response = await fetch("./json/categoriasProdutos.json");
+      const response = await fetch("./json/produto/categorias/categoriasProdutos.json");
       const data = await response.json();
 
       const swiperWrapper = document.querySelector(".swiper-categories-slide");
@@ -291,7 +292,7 @@ export default function fetchProducts() {
 
   async function fetchBannerPrincipal() {
     try {
-      const response = await fetch("./json/banners.json");
+      const response = await fetch("./json/banner/banners.json");
       const data = await response.json();
 
       const swiperWrapper = document.querySelector(".swiper-banner-principal");
@@ -316,7 +317,7 @@ export default function fetchProducts() {
 
   async function fetchBannerSecundario() {
     try {
-      const response = await fetch("./json/banners.json");
+      const response = await fetch("./json/banner/banners.json");
       const data = await response.json();
 
       const swiperWrapper = document.querySelector(".swiper-banner-secundario");

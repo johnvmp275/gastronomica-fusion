@@ -45,7 +45,7 @@ checkCartEmpty()
 
 export default function addToCart(productId) {
 
-    fetch('./json/produtos.json')
+    fetch('./json/produto/vitrine/produtos.json')
         .then(response => response.json())
         .then(data => {
             const produtos = [...data.primeiro_slide, ...data.segundo_slide, ...data.terceiro_slide];
