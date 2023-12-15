@@ -1,0 +1,64 @@
+{
+    "menu": [
+      {
+        "name": "Categorias",
+        "submenus": [
+          { "nvl1": "teste e teste" },
+          { "nvl1": "teste" },
+          { "nvl1": "teste" },
+          { "nvl1": "teste" },
+          { "nvl1": "teste" },
+          { "nvl1": "teste" },
+          { "nvl1": "teste" },
+          { "nvl1": "teste" },
+          { "nvl1": "teste" }
+        ]
+      },
+      {
+        "name": "Institucionais",
+        "submenus": [
+          { "nvl1": "teste" },
+          { "nvl1": "teste" },
+          { "nvl1": "teste" },
+          { "nvl1": "teste" }
+        ]
+      },
+      {
+        "name": "Políticas",
+        "submenus": [
+            { "nvl1": "teste" },
+            { "nvl1": "teste" },
+            { "nvl1": "teste" },
+            { "nvl1": "teste" },
+            { "nvl1": "teste" }
+          ]
+      },
+      {
+        "name": "Central de atendimento",
+        "submenus": [
+            { "nvl1": "teste" },
+            { "nvl1": "teste" },
+            { "nvl1": "teste" },
+            { "nvl1": "teste" },
+            { "nvl1": "teste" },
+            { "nvl1": "teste" },
+            { "nvl1": "Nossos canais de atendimento funcionam de Segunda à Sexta: 08h30 às 16h30 (exceto feriados)." }
+          ]
+      },
+      {
+        "name": "Formas de pagamento",
+        "submenus": [
+            { "nvl1": "teste" },
+            { "nvl1": "teste" }
+          ]
+      },
+      {
+        "name": "Segurança",
+        "submenus": [
+            { "nvl1": "teste" },
+            { "nvl1": "teste" }
+          ]
+      }
+    ]
+  }
+  

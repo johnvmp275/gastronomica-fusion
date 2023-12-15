@@ -389,9 +389,61 @@ body .rodape {
   min-height: 40px;
 }
 
+.rodape-menu {
+  margin: 40px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.rodape-menu-lista-desktop {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 100%;
+  justify-content: space-between;
+  margin: 0 70px;
+  column-gap: 20px;
+  height: 419px;
+}
+
+.rodape-menu-lista-desktop .list-rodape {
+  display: flex;
+  flex-direction: column;
+  min-width: 123px;
+  max-width: 260px;
+  width: 100%;
+  padding: 6px 0;
+}
+
+.sub-list-rodape {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  min-width: 127px;
+  min-height: 127px;
+  gap: 8px;
+}
+
+.list-rodape .navigationLink {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.list-rodape li {
+  display: flex;
+  min-width: 123px;
+  min-height: 19px;
+  width: 100%;
+}
+
+.list-rodape li a {
+  width: 100%;
+}
+
 @media (max-width: 720px) {
   .header-desktop,
-  .menuMain {
+  .menuMain,.instagram-post:nth-child(6), .rodape-menu-lista-desktop  {
     display: none;
   }
 
@@ -410,10 +462,6 @@ body .rodape {
       "imgC imgC"
       "imgD imgE";
     gap: 8px;
-  }
-
-  .instagram-post:nth-child(6) {
-    display: none;
   }
 
   .newsletter-email,

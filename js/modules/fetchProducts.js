@@ -121,7 +121,7 @@ export default function fetchProducts() {
 
       document.querySelectorAll(".navigation-item").forEach((item) => {
         item.addEventListener("mouseover", function () {
-          const subContainer = this.querySelector('.sub-container');
+          const subContainer = this.querySelector(".sub-container");
           if (subContainer) {
             document.querySelector(".header-navigation__black").style.display =
               "block";
@@ -135,15 +135,12 @@ export default function fetchProducts() {
             "none";
         });
       });
-
-
     } catch (error) {
       console.error("Houve um erro ao buscar o menu:", error);
     }
-
   }
 
-  // Primeira vitrine de produtos 
+  // Primeira vitrine de produtos
 
   async function fetchProductsPrimario() {
     try {
@@ -181,14 +178,16 @@ export default function fetchProducts() {
     }
   }
 
-  // Segunda vitrine de produtos 
+  // Segunda vitrine de produtos
 
   async function fetchProductsSecundario() {
     try {
       const response = await fetch("./json/produto/vitrine/produtos.json");
       const data = await response.json();
 
-      const swiperWrapper = document.querySelector(".swiper-products-slideSecundario");
+      const swiperWrapper = document.querySelector(
+        ".swiper-products-slideSecundario"
+      );
       const segundoSlide = data.segundo_slide;
 
       segundoSlide.forEach((product) => {
@@ -219,14 +218,16 @@ export default function fetchProducts() {
     }
   }
 
-  // Terceira vitrine de produtos 
+  // Terceira vitrine de produtos
 
   async function fetchProductsTerceiro() {
     try {
       const response = await fetch("./json/produto/vitrine/produtos.json");
       const data = await response.json();
 
-      const swiperWrapper = document.querySelector(".swiper-products-slideTerceiro");
+      const swiperWrapper = document.querySelector(
+        ".swiper-products-slideTerceiro"
+      );
 
       const terceiroSlide = data.terceiro_slide;
 
@@ -258,12 +259,13 @@ export default function fetchProducts() {
     }
   }
 
-
   //fetch categorias de produtos
 
   async function fetchCategories() {
     try {
-      const response = await fetch("./json/produto/categorias/categoriasProdutos.json");
+      const response = await fetch(
+        "./json/produto/categorias/categoriasProdutos.json"
+      );
       const data = await response.json();
 
       const swiperWrapper = document.querySelector(".swiper-categories-slide");
@@ -288,7 +290,7 @@ export default function fetchProducts() {
     }
   }
 
-  //fetch banner 
+  //fetch banner
 
   async function fetchBannerPrincipal() {
     try {
@@ -313,7 +315,7 @@ export default function fetchProducts() {
     }
   }
 
-  //fetch banner 
+  //fetch banner
 
   async function fetchBannerSecundario() {
     try {
@@ -389,7 +391,38 @@ export default function fetchProducts() {
     }
   }
 
-  //inicialização do carregamento de itens  
+  async function fecthInstitucional() {
+    try {
+      // Fetch do JSON do menu
+      const response = await fetch("./json/menu/institucionais.json"); // Substitua pelo caminho correto do seu arquivo JSON de menu
+      const menuData = await response.json();
+
+      // Geração dinâmica do menu
+      const menuContainer = document.querySelector(".rodape-menu-lista-desktop");
+      menuContainer.innerHTML = generateMenuHTML(menuData.menu);
+
+      function generateMenuHTML(menu) {
+        let html = "";
+        menu.slice(0, 9).forEach((item) => {
+          html += `<li class="list-rodape"><a href="" class="navigationLink">${item.name}</a>`;
+          if (item.submenus && item.submenus.length > 0) {
+            html += `<ul class="sub-list-rodape">`;
+            item.submenus.forEach((subitem) => {
+              html += `<li><a href="">${subitem.nvl1}</a>`;
+              html += `</li>`;
+            });
+            html += `</ul>`;
+          }
+          html += `</li>`;
+        });
+        return html;
+      }
+    } catch (error) {
+      console.error("Houve um erro ao buscar o menu:", error);
+    }
+  }
+
+  //inicialização do carregamento de itens
 
   async function awaitProduct() {
     await fetchProductsPrimario();
@@ -397,6 +430,7 @@ export default function fetchProducts() {
     await fetchProductsTerceiro();
     await fetchMidias();
     await fetchMenu();
+    await fecthInstitucional();
 
     initializeProduto();
 
@@ -405,6 +439,7 @@ export default function fetchProducts() {
     document.addEventListener("DOMContentLoaded", fetchProductsTerceiro);
     document.addEventListener("DOMContentLoaded", fetchMidias);
     document.addEventListener("DOMContentLoaded", fetchMenu);
+    document.addEventListener("DOMContentLoaded", fecthInstitucional);
 
     activeItemsProducts();
     activeCart();
