@@ -441,9 +441,15 @@ body .rodape {
   width: 100%;
 }
 
+.sub-list-rodape li a:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 720px) {
   .header-desktop,
-  .menuMain,.instagram-post:nth-child(6), .rodape-menu-lista-desktop  {
+  .menuMain,
+  .instagram-post:nth-child(6),
+  .rodape-menu-lista-desktop {
     display: none;
   }
 
