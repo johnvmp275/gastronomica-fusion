@@ -48,15 +48,24 @@
       {
         "name": "Formas de pagamento",
         "submenus": [
-            { "nvl1": "teste" },
-            { "nvl1": "teste" }
+            { "imagem": "master.png" },
+            { "imagem": "visa.png" },
+            { "imagem": "paypal.png" },
+            { "imagem": "boletocartao.png" },
+            { "imagem": "amex.png" },
+            { "imagem": "discover.png" },
+            { "imagem": "elo.png" },
+            { "imagem": "hipercard.png" },
+            { "imagem": "pix.png" },
+            { "imagem": "boleto.png" }
           ]
       },
       {
         "name": "Segurança",
         "submenus": [
-            { "nvl1": "teste" },
-            { "nvl1": "teste" }
+          { "imagem": "selo-site-seguro-google.png" },
+          { "imagem": "selo-site-seguro-new.png" },
+          { "imagem": "reclame-aqui.png" }
           ]
       }
     ]

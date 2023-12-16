@@ -403,16 +403,21 @@ export default function fetchProducts() {
 
       function generateMenuHTML(menu) {
         let html = "";
-        menu.slice(0, 9).forEach((item) => {
+        menu.forEach((item) => {
           html += `<li class="list-rodape"><a href="" class="navigationLink">${item.name}</a>`;
+
           if (item.submenus && item.submenus.length > 0) {
             html += `<ul class="sub-list-rodape">`;
             item.submenus.forEach((subitem) => {
-              html += `<li><a href="">${subitem.nvl1}</a>`;
-              html += `</li>`;
+              if (subitem && subitem.imagem) {
+                html += `<a class="selos-rodape" href=""><img src="./img/${subitem.imagem}" alt="selos"></a>`;
+              } else {
+                html += `<li><a href="">${subitem.nvl1}</a></li>`;
+              }
             });
             html += `</ul>`;
           }
+
           html += `</li>`;
         });
         return html;
