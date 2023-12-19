@@ -395,22 +395,18 @@ body .rodape {
 }
 
 .rodape-menu-lista-desktop {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  height: 100%;
-  justify-content: space-between;
-  margin: 0 70px;
-  column-gap: 20px;
-  height: 419px;
+  margin: 0 auto;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
 }
 
 .rodape-menu-lista-desktop .list-rodape {
   display: flex;
   flex-direction: column;
   min-width: 123px;
-  max-width: 260px;
+  max-width: 330px;
   width: 100%;
   padding: 6px 0;
 }
@@ -420,7 +416,7 @@ body .rodape {
   flex-wrap: wrap;
   min-width: 127px;
   width: 100%;
-  gap: 8px;
+  gap: 16px;
 }
 
 .list-rodape .navigationLink {
@@ -433,11 +429,11 @@ body .rodape {
   min-width: 123px;
   min-height: 19px;
   width: 100%;
-  max-width: 260px;
 }
 
 .list-rodape li a {
   width: 100%;
+  font-size: 14px;
 }
 
 .sub-list-rodape li a:hover {

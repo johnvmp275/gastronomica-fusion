@@ -287,6 +287,31 @@
 
     <!-- Initialize Swiper -->
     <script type="module" src="./js/script.js"></script>
+    
+    <!-- Newsletter Email -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        function sendMail() {
+            emailjs.init("_Y1mTQWGGhEIPqIDL")
+
+            var params = {
+                to_name: document.querySelector("#to_name").value,
+                to: document.querySelector("#to").value,
+            };
+            var serviceID = "service_bffpsfm";
+            var templateID = "template_01lcbye"
+
+            emailjs.send(serviceID, templateID, params)
+                .then(function (r) {
+                    alert("Your email has just been sent");
+                    document.querySelector("#to_name").value = "";
+                    document.querySelector("#to").value = "";
+                }, function (error) {
+                    alert("There was an error sending your email");
+                });
+        }
+    </script>
+
 </body>
 
 </html>
