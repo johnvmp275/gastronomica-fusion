@@ -243,10 +243,25 @@
     </main>
     <footer class="rodape containerMain Main">
         <section class="newsletter">
-            <div class="newsletter-email">
-                <input type="text" placeholder="Enter your name" id="to_name">
-                <input type="email" placeholder="xyz@gmail.com" id="to">
-                <button class="btn_banner" type="submit" onclick="sendMail();">Enviar</button>
+            <div class="newsletter-text">
+                <h2>Acompanhe a FusionLive!</h2>
+                <span> Assine nossa newsletter e seja o primeiro a receber nossas atualizações sobre Fusion!</span>
+            </div>
+            <div class="newsletter-inscricao">
+                <form class="newsletter-form">
+                    <div class="newsletter-email">
+                        <div class="newsletter-input">
+                            <label for="to_name">Seu nome</label>
+                            <input type="text" placeholder="Insira seu nome" id="to_name" required>
+                        </div>
+                        <div class="newsletter-input">
+                            <label for="to">Seu e-mail</label>
+                            <input type="email" placeholder="email@email.com" id="to" required>
+                        </div>
+                        <button class="btn_banner" type="submit" onclick="sendMail();">Enviar</button>
+                    </div>
+                </form>
+                <p class="newsletter-aviso">Ao se cadastrar você concorda com a nossa <a href="#">Política de Privacidade.</a></p>
             </div>
         </section>
         <section class="socialMedias">
@@ -264,9 +279,14 @@
             </div>
         </section>
         <section class="rodape-menu">
-            <ul class="rodape-menu-lista-desktop">
+            <div class="menu-list-rodape">
+                <ul class="rodape-menu-lista-desktop">
 
-            </ul>
+                </ul>
+                <ul class="selos-rodape-menu">
+
+                </ul>
+            </div>
             <hr>
         </section>
         <section class="copy-rodape">
@@ -287,7 +307,7 @@
 
     <!-- Initialize Swiper -->
     <script type="module" src="./js/script.js"></script>
-    
+
     <!-- Newsletter Email -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>

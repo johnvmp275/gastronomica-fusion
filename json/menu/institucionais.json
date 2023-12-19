@@ -44,29 +44,6 @@
             { "nvl1": "teste" },
             { "nvl1": "Nossos canais de atendimento funcionam de Segunda à Sexta: 08h30 às 16h30 (exceto feriados)." }
           ]
-      },
-      {
-        "name": "Formas de pagamento",
-        "submenus": [
-            { "imagem": "master.png" },
-            { "imagem": "visa.png" },
-            { "imagem": "paypal.png" },
-            { "imagem": "boletocartao.png" },
-            { "imagem": "amex.png" },
-            { "imagem": "discover.png" },
-            { "imagem": "elo.png" },
-            { "imagem": "hipercard.png" },
-            { "imagem": "pix.png" },
-            { "imagem": "boleto.png" }
-          ]
-      },
-      {
-        "name": "Segurança",
-        "submenus": [
-          { "imagem": "selo-site-seguro-google.png" },
-          { "imagem": "selo-site-seguro-new.png" },
-          { "imagem": "reclame-aqui.png" }
-          ]
       }
     ]
   }

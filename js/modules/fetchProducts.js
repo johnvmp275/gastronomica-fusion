@@ -409,10 +409,42 @@ export default function fetchProducts() {
           if (item.submenus && item.submenus.length > 0) {
             html += `<ul class="sub-list-rodape">`;
             item.submenus.forEach((subitem) => {
+                html += `<li><a href="">${subitem.nvl1}</a></li>`;
+            });
+            html += `</ul>`;
+          }
+
+          html += `</li>`;
+        });
+        return html;
+      }
+    } catch (error) {z
+      console.error("Houve um erro ao buscar o menu:", error);
+    }
+  }
+
+  async function fecthselos() {
+    try {
+      // Fetch do JSON do menu
+      const response = await fetch("./json/menu/selos.json"); // Substitua pelo caminho correto do seu arquivo JSON de menu
+      const menuData = await response.json();
+
+      // Geração dinâmica do menu
+      const menuContainer = document.querySelector(".selos-rodape-menu");
+      menuContainer.innerHTML = generateMenuHTML(menuData.menu);
+
+      function generateMenuHTML(menu) {
+        let html = "";
+        menu.forEach((item) => {
+          html += `<li class="list-rodape"><a href="" class="navigationLink">${item.name}</a>`;
+
+          if (item.submenus && item.submenus.length > 0) {
+            html += `<ul class="sub-list-rodape">`;
+            item.submenus.forEach((subitem) => {
               if (subitem && subitem.imagem) {
                 html += `<a class="selos-rodape" href=""><img src="./img/${subitem.imagem}" alt="selos"></a>`;
               } else {
-                html += `<li><a href="">${subitem.nvl1}</a></li>`;
+                html += ``;
               }
             });
             html += `</ul>`;
@@ -436,6 +468,7 @@ export default function fetchProducts() {
     await fetchMidias();
     await fetchMenu();
     await fecthInstitucional();
+    await fecthselos();
 
     initializeProduto();
 
@@ -445,6 +478,7 @@ export default function fetchProducts() {
     document.addEventListener("DOMContentLoaded", fetchMidias);
     document.addEventListener("DOMContentLoaded", fetchMenu);
     document.addEventListener("DOMContentLoaded", fecthInstitucional);
+    document.addEventListener("DOMContentLoaded", fecthselos);
 
     activeItemsProducts();
     activeCart();

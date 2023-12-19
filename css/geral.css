@@ -343,21 +343,78 @@ body .rodape {
 .newsletter {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   border-radius: 10px;
-  height: 146px;
+  height: auto;
   padding: 37px 70px;
   background: var(--background-red);
+  width: 100%;
+}
+
+.newsletter-text {
+  color: white;
+  display: flex;
+  max-width: 282px;
+  width: 100%;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.newsletter-text h2 {
+  font-size: 20px;
+}
+
+.newsletter span {
+  font-size: 14px;
+}
+
+.newsletter-inscricao {
+  display: flex;
+  flex-direction: column;
+}
+
+.newsletter-form label {
+  color: white;
+}
+
+.newsletter button,
+.newsletter input {
+  color: var(--swiper-theme-color);
+  background: white;
+  height: 36px;
+  border-radius: 8px;
 }
 
 .newsletter button {
-  color: var(--swiper-theme-color);
+  padding: 8px;
+  width: 100%;
+  max-width: 163px;
+}
+
+.newsletter input {
+  width: 100%;
+  margin-top: 10px;
+  max-width: 271px;
+  padding: 8px 16px;
 }
 
 .newsletter-email {
   display: flex;
-  align-items: center;
+  height: 100%;
+  align-items: end;
   width: 100%;
+  max-width: 730px;
   gap: 17px;
+}
+
+.newsletter-aviso, .newsletter-aviso a {
+  margin-top: 10px;
+  font-size: 14px;
+  color: white;
+}
+
+.newsletter-aviso a {
+  text-decoration: underline;
 }
 
 .socialMedias {
@@ -394,20 +451,35 @@ body .rodape {
   flex-direction: column;
 }
 
-.rodape-menu-lista-desktop {
-  margin: 0 auto;
-  height: auto;
+.menu-list-rodape {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
+  grid-template-columns: 3fr 1fr;
 }
 
-.rodape-menu-lista-desktop .list-rodape {
+.rodape-menu-lista-desktop,
+.selos-rodape-menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rodape-menu-lista-desktop {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  margin-right: 80px;
+}
+
+.selos-rodape-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.list-rodape {
   display: flex;
   flex-direction: column;
   min-width: 123px;
-  max-width: 330px;
-  width: 100%;
+  width: auto;
   padding: 6px 0;
 }
 
@@ -447,15 +519,16 @@ body .rodape {
   align-items: center;
 }
 
-.logo-rodape{
+.logo-rodape {
   margin-bottom: 30px;
 }
+
 .logo-rodape img {
   border-radius: 8px;
 }
 
-.copy-rodape  p {
-   text-align: center;
+.copy-rodape p {
+  text-align: center;
 }
 
 
