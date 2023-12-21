@@ -33,7 +33,6 @@ export default function fetchProducts() {
     //=====swiper de produtos====
 
     new Swiper(".swiper-products", {
-      loop: true,
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
