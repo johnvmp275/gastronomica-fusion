@@ -40,8 +40,8 @@ export default function fetchProducts() {
       },
       breakpoints: {
         0: {
-          slidesPerView: 1.5,
-          spaceBetween: 10,
+          slidesPerView: 1.7,
+          spaceBetween: 20,
         },
         720: {
           slidesPerView: 5.3,
