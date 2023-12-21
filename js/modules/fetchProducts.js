@@ -18,12 +18,12 @@ export default function fetchProducts() {
       },
       breakpoints: {
         0: {
-          slidesPerView: 2,
-          spaceBetween: 20,
+          slidesPerView: 1.4,
+          spaceBetween: 0,
         },
         720: {
           slidesPerView: 4.3,
-          spaceBetween: 20,
+          spaceBetween: 10,
         },
       },
     });
@@ -40,7 +40,7 @@ export default function fetchProducts() {
       },
       breakpoints: {
         0: {
-          slidesPerView: 2,
+          slidesPerView: 1.5,
           spaceBetween: 10,
         },
         720: {
@@ -398,7 +398,9 @@ export default function fetchProducts() {
       const menuData = await response.json();
 
       // Geração dinâmica do menu
-      const menuContainer = document.querySelector(".rodape-menu-lista-desktop");
+      const menuContainer = document.querySelector(
+        ".rodape-menu-lista-desktop"
+      );
       menuContainer.innerHTML = generateMenuHTML(menuData.menu);
 
       function generateMenuHTML(menu) {
@@ -409,7 +411,7 @@ export default function fetchProducts() {
           if (item.submenus && item.submenus.length > 0) {
             html += `<ul class="sub-list-rodape">`;
             item.submenus.forEach((subitem) => {
-                html += `<li><a href="">${subitem.nvl1}</a></li>`;
+              html += `<li><a href="">${subitem.nvl1}</a></li>`;
             });
             html += `</ul>`;
           }
@@ -418,7 +420,8 @@ export default function fetchProducts() {
         });
         return html;
       }
-    } catch (error) {z
+    } catch (error) {
+      z;
       console.error("Houve um erro ao buscar o menu:", error);
     }
   }
