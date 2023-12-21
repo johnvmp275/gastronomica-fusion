@@ -18,7 +18,7 @@ export default function fetchProducts() {
       },
       breakpoints: {
         0: {
-          slidesPerView: 1.4,
+          slidesPerView: 1.8,
           spaceBetween: 0,
         },
         720: {
