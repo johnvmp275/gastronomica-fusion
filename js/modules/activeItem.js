@@ -11,6 +11,9 @@ export default function activeCart() {
   //====open list=====
   const listaBotoes = document.querySelectorAll(".menu-lista-mobile-topo");
 
+  const menuMobile = document.querySelector(".btn-menu-mobile");
+  const menuMobileContainer = document.querySelector(".menu-mobile")
+
   //====cart=====
 
   buttonCart.addEventListener("click", () => {
@@ -35,17 +38,16 @@ export default function activeCart() {
 
   //====buy product=====
 
-  buttonBuy.forEach(button => {
+  buttonBuy.forEach((button) => {
     button.addEventListener("click", () => {
       cartRight.classList.add("active");
       body.classList.add("hidden");
     });
-
   });
 
   //====open list=====
 
-  listaBotoes.forEach(botao => {
+  listaBotoes.forEach((botao) => {
     botao.addEventListener("click", function () {
       botao.classList.toggle("rotate");
       const container = this.closest(".menu-lista-mobile-topo");
@@ -56,4 +58,15 @@ export default function activeCart() {
     });
   });
 
+  // =====menu mobile====
+
+  menuMobile.addEventListener("click", () => {
+    menuMobileContainer.classList.add("active");
+    body.classList.add("hidden");
+  });
+
+  backgroundClose.addEventListener("click", () => {
+    menuMobileContainer.classList.remove("active");
+    body.classList.remove("hidden");
+  });
 }
