@@ -420,10 +420,51 @@ export default function fetchProducts() {
         return html;
       }
     } catch (error) {
-      z;
       console.error("Houve um erro ao buscar o menu:", error);
     }
   }
+
+  async function fecthInstitucionalMobile() {
+    try {
+      // Fetch do JSON do menu
+      const response = await fetch("./json/menu/institucionais.json"); // Substitua pelo caminho correto do seu arquivo JSON de menu
+      const menuData = await response.json();
+
+      // Geração dinâmica do menu
+      const menuContainer = document.querySelector(
+        ".rodape-lista-mobile"
+      );
+      menuContainer.innerHTML = generateMenuHTML(menuData.menu);
+
+      function generateMenuHTML(menu) {
+        let html = "";
+        menu.forEach((item) => {
+          html += `<ul class="rodape-menu-lista-mobile"> <div class="menu-lista-mobile-topo">
+          <span>${item.name}</span>
+          <button type="button" class="lista-open">
+              <span class="material-symbols-outlined ">
+                  expand_more
+              </span>
+                 </button>
+             </div>`;
+
+          if (item.submenus && item.submenus.length > 0) {
+            html += ` <ul class="sub-list-mobile">`;
+            item.submenus.forEach((subitem) => {
+              html += `<li  class="list-mobile-open"><a href="">${subitem.nvl1}</a></li>`;
+            });
+            html += `</ul>`;
+          }
+
+          html += `</ul>`;
+        });
+        return html;
+      }
+    } catch (error) {
+      console.error("Houve um erro ao buscar o menu:", error);
+    }
+  }
+  
 
   async function fecthselos() {
     try {
@@ -471,6 +512,7 @@ export default function fetchProducts() {
     await fetchMenu();
     await fecthInstitucional();
     await fecthselos();
+    await fecthInstitucionalMobile();
 
     initializeProduto();
 
@@ -481,6 +523,7 @@ export default function fetchProducts() {
     document.addEventListener("DOMContentLoaded", fetchMenu);
     document.addEventListener("DOMContentLoaded", fecthInstitucional);
     document.addEventListener("DOMContentLoaded", fecthselos);
+    document.addEventListener("DOMContentLoaded", fecthInstitucionalMobile);
 
     activeItemsProducts();
     activeCart();
@@ -493,4 +536,5 @@ export default function fetchProducts() {
   document.addEventListener("DOMContentLoaded", fetchBannerPrincipal);
   document.addEventListener("DOMContentLoaded", fetchBannerSecundario);
   document.addEventListener("DOMContentLoaded", fetchInstashop);
+
 }
