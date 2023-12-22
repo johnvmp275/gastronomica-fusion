@@ -9,7 +9,7 @@ export default function activeCart() {
   //====buy product=====
   const buttonBuy = document.querySelectorAll(".product-link");
   //====open list=====
-  const listaBotoes = document.querySelectorAll(".lista-open");
+  const listaBotoes = document.querySelectorAll(".menu-lista-mobile-topo");
 
   //====cart=====
 

@@ -497,7 +497,7 @@ body .rodape {
   transition: var(--transition-02);
 }
 
-.lista-open.rotate span {
+.menu-lista-mobile-topo.rotate .lista-open span {
   transform: rotate(180deg);
 }
 
