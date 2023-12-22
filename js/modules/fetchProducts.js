@@ -1,6 +1,6 @@
 import activeItemsProducts from "./favoriteProduct.js";
 import addToCard from "./cartItem.js";
-import activeCart from "./activeCart.js";
+import activeItem from "./activeItem.js";
 
 export default function fetchProducts() {
   // Função para inicializar o Swiper
@@ -526,7 +526,7 @@ export default function fetchProducts() {
     document.addEventListener("DOMContentLoaded", fecthInstitucionalMobile);
 
     activeItemsProducts();
-    activeCart();
+    activeItem();
   }
 
   awaitProduct();
