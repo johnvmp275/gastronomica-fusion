@@ -436,10 +436,10 @@ export default function fetchProducts() {
       );
       menuContainer.innerHTML = generateMenuHTML(menuData.menu);
 
-      function generateMenuHTML(menu) {
-        let html = "";
-        menu.forEach((item) => {
-          html += `<ul class="rodape-menu-lista-mobile"> <div class="menu-lista-mobile-topo">
+        function generateMenuHTML(menu) {
+          let html = "";
+          menu.forEach((item) => {
+            html += `<ul class="rodape-menu-lista-mobile"> <div class="menu-lista-mobile-topo">
           <span>${item.name}</span>
           <button type="button" class="lista-open">
               <span class="material-symbols-outlined ">
@@ -448,23 +448,23 @@ export default function fetchProducts() {
                  </button>
              </div>`;
 
-          if (item.submenus && item.submenus.length > 0) {
-            html += ` <ul class="sub-list-mobile">`;
-            item.submenus.forEach((subitem) => {
-              html += `<li  class="list-mobile-open"><a href="">${subitem.nvl1}</a></li>`;
-            });
-            html += `</ul>`;
-          }
+            if (item.submenus && item.submenus.length > 0) {
+              html += ` <ul class="sub-list-mobile">`;
+              item.submenus.forEach((subitem) => {
+                html += `<li  class="list-mobile-open"><a href="">${subitem.nvl1}</a></li>`;
+              });
+              html += `</ul>`;
+            }
 
-          html += `</ul>`;
-        });
-        return html;
-      }
+            html += `</ul>`;
+          });
+          return html;
+        }
     } catch (error) {
       console.error("Houve um erro ao buscar o menu:", error);
     }
   }
-  
+
 
   async function fecthselos() {
     try {

@@ -470,8 +470,13 @@ body .rodape {
   margin-right: 80px;
 }
 
-.rodape-menu-lista-mobile {
+.rodape-lista-mobile {
   display: none;
+  flex-direction: column;
+}
+
+.rodape-menu-lista-mobile {
+  display: flex;
   border: 2px solid #DADADA;
   border-radius: 8px;
   width: 100%;
@@ -645,7 +650,7 @@ body .rodape {
     width: 100%;
   }
 
-  .rodape-menu-lista-mobile {
+  .rodape-lista-mobile {
     display: flex;
   }
 }
