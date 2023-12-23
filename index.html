@@ -264,7 +264,7 @@
                             <label for="to">Seu e-mail</label>
                             <input type="email" placeholder="email@email.com" id="to" required>
                         </div>
-                        <button class="btn_banner" type="submit" onclick="sendMail();">Enviar</button>
+                        <button class="btn_banner" type="submit" onclick="sendMail(e);">Enviar</button>
                     </div>
                 </form>
                 <p class="newsletter-aviso">Ao se cadastrar você concorda com a nossa <a href="#">Política de
@@ -323,7 +323,10 @@
     <!-- Newsletter Email -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
-        function sendMail() {
+        function sendMail(e) {
+
+            e.preventDefault();
+            
             emailjs.init("_Y1mTQWGGhEIPqIDL")
 
             var params = {
