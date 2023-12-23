@@ -39,11 +39,10 @@ function addQuantityEvents(container) {
             }
         }
     });
+    
 }
 
 export default function addToCart(productId) {
-
-
     fetch('./json/produto/vitrine/produtos.json')
         .then(response => response.json())
         .then(data => {
@@ -98,9 +97,7 @@ export default function addToCart(productId) {
                     carrinhoContainer.appendChild(cartItem);
 
                     checkCartEmpty();
-
                     addQuantityEvents(cartItem);
-
                     let produtosLocalStorage = JSON.parse(localStorage.getItem('produtos')) || {};
                     produtosLocalStorage[product.id] = {
                         id: product.id,
@@ -109,7 +106,7 @@ export default function addToCart(productId) {
                         image: product.image
                     };
                     localStorage.setItem('produtos', JSON.stringify(produtosLocalStorage));
-
+                    somarPrecos();
                 } else {
                     console.log('Produto já está no carrinho.');
                 }
@@ -173,9 +170,7 @@ function renderCartItems() {
             </div>
         `;
         carrinhoContainer.appendChild(cartItem);
-
-        addQuantityEvents(cartItem);
-
+        somarPrecos();
     });
 }
 
@@ -188,14 +183,38 @@ function setupRemoveItem() {
         removeButton.addEventListener('click', () => {
             cartItems[index].remove();
             checkCartEmpty();
+          
 
             const itemToRemove = removeButton.closest('.cart-item');
             const productIdToRemove = itemToRemove.dataset.productId;
 
-            // Remove o item do localStorage
             let produtosLocalStorage = JSON.parse(localStorage.getItem('produtos')) || {};
             delete produtosLocalStorage[productIdToRemove];
             localStorage.setItem('produtos', JSON.stringify(produtosLocalStorage));
+
+            somarPrecos();
         });
     });
 }
+
+function somarPrecos() {
+    let produtosLocalStorage = JSON.parse(localStorage.getItem('produtos')) || {};
+    let precoTotal = 0;
+
+    for (let productId in produtosLocalStorage) {
+        if (produtosLocalStorage.hasOwnProperty(productId)) {
+            precoTotal += parseFloat(produtosLocalStorage[productId].price);
+        }
+    }
+
+    if (!isNaN(precoTotal)) {
+        let precoTotalSpan = document.querySelector('.valor-total');
+        if (precoTotalSpan) {
+            precoTotalSpan.innerText = `${precoTotal},00`;
+        }
+    }
+}
+
+
+somarPrecos();
+
